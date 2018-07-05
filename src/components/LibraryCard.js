@@ -2,6 +2,8 @@ import React    from 'react';
 import Header   from './Header';
 import axios    from 'axios';
 import DailyGoal from './libraryCardComponents/DailyGoals';
+import GiveAnotherTryToBook from './libraryCardComponents/GiveAnotherTryToBook';
+    
 
 class LibraryCard extends React.Component{
  
@@ -15,7 +17,7 @@ class LibraryCard extends React.Component{
   }
  
   componentWillMount(){
-    axios.get('https://hanan-lior-publisher-app.herokuapp.com/user/userByID/5b29fb01817b593f14eac973')
+    axios.get('https://hanan-lior-publisher-app.herokuapp.com/user/userByID/5b2a86ece7179a58928586e4')
      .then(userData=>{
         this.setState({
             isLoading: false,
@@ -91,16 +93,9 @@ class LibraryCard extends React.Component{
                 </div>
                 <div className="clear-both">
                 </div>
-                <div id="bookAnotherTray">
-                    <p>give these books another try!</p>
-                    <article>
-                        <img src="images/whanBook.png"></img>
-                        <section>
-                            "this book having perfect timing for e in everything in your life"
-                        </section>
-                        <button>start again</button>
-                    </article>
-                </div>
+             
+                <GiveAnotherTryToBook/>
+
                 <div id="recentlyFinish">
                     <p>recently finished</p>
                     <article>
