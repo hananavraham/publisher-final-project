@@ -1,5 +1,684 @@
+/* ----------------------------------------------------
+Stylesheet for http://www.YourProject.com
+
+Updated: 11/20/2012
+Author: Eric Watson
+Website: http://www.websitecodetutorials.com
+------------------------------------------------------- 
+: Site Colors : 
+background ... #CCC;
+
+: Table Of Contents :
+Resets
+Defaults
+Typography
+Forms
+Layout
+Links
+Menus
+Global Classes
+Content
+---------------------------------------------------- */
+
+/* -------------------- Resets --------------------- */
+body, form, fieldset, ol, ul, li, h1, h2, h3, h4, h5, h6, p {
+    margin:0;
+    padding:0;
+}
+img {
+    border:0; /* kills Gecko bug when img's are placed inside links */
+    vertical-align:bottom; /* set vertical align to bottom for IE */
+}
+/* ------------------- Defaults ------------------- */
+html {
+    height:100%; 
+    overflow:auto; /* triggers 100% height in Opera 9.5 */
+    overflow-y:scroll; /* creates a horizontal scrollbar, for a more consistent look & feel */
+}
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    height:100%; /* helps make height 100% */
+    font:100%/1.5 Arial, Helvetica, sans-serif; /* 100% = 16px, 93.75% = 15px, 87.5% = 14px, 81.25% = 13px, 75% = 12px - font-size in % prevents IE's resize bug */
+    background:#FDFDFD;
+    color:#333;
+}
+/* ------------------ Typography ------------------- */
+h1, h2, h3, h4, h5, h6, p {
+    margin:0 0 1em;
+}
+p, ul, ol {
+    font-size:1em;
+}
+ul {
+    margin:0 0 1em 25px;
+    list-style:none;
+}
+h1 {font-size:1.6em;}
+h2 {font-size:1.5em;}
+h3 {font-size:1.4em;}
+h4 {font-size:1.3em;}
+h5 {font-size:1.2em;}
+h6 {font-size:1.1em;}
+/* -------------------- Forms ---------------------- */
+fieldset {
+    border:none;
+}
+form :focus {
+    outline:0; /* removes Safari's blue border */
+}  
+input, select, textarea {
+    font-size:1em;
+    font-family:Arial, Helvetica, sans-serif;
+}
+label {
+    cursor:pointer;
+    vertical-align:middle;
+}
+input {
+    vertical-align:middle;
+}
+textarea { 
+    overflow:auto; /* removes scrollbar from IE when none is needed */
+}   
+/* -------------------- Layout --------------------- */
+#wrap {
+    margin:0 auto; /* centers layout */
+    min-height:100%; /* height 100% in all modern browsers */
+}
+#head {
+}
+#nav {
+}
+#content {
+}
+#left {
+    float:left;
+}
+#foot {
+    clear:both;
+}
+/* ------------------- Links ---------------------- */
+a {
+    text-decoration:underline;
+    color:#000;
+    outline:0; /* removes dotted border */
+}
+a:visited {
+    color:#999;
+}
+a:hover, a:focus, a:active {
+    text-decoration:none;
+    /* add-custom:outline-rule-here; */
+}
+/* --------------------- Menus -------------------- */
+/* Main Menu */
+#nav {
+}
+#nav li {
+}
+#nav a {
+    text-decoration:none;
+}
+#nav a:hover, #nav a:focus, #nav a:active {
+}
+/* Foot Menu */
+#foot ul {
+}
+#foot li {
+}
+#foot a {
+    text-decoration:none;
+}
+#foot a:hover, #foot a:focus, #foot a:active {
+}
+/* ---------------- Global Classes --------------- */
+.clear {
+    clear:both;
+    line-height:0;
+    height:0;
+    font-size:0;
+}
+.clearfix:after {
+    content:" "; 
+    display:block; 
+    height:0;
+    font-size:0; 
+    clear:both; 
+    visibility:hidden;
+}
+.clearfix {display:inline-block;}
+/* mac hide \*/
+* html .clearfix {height:1%;}
+.clearfix {display:block;}
+/* End hide */
+/* ------------------- Content ------------------- */
+
+/* Css for side menu */
+#sideNavMenu{
+    width: 951px;
+    height: 2555px;
+    border: 1px solid #707070;
+    background-color: #ffffff;
+    // display: none;
+    position: absolute;
+    top: 0;
+}
+
+
+/* Css for hamburger btn*/
+
+#headerHamBtn ,#sideMenuHamBtn{
+    width: 73px;
+    margin-top: 78px;
+    margin-left: 64px;
+    height: 71px;
+
+}
+
+#headerHamBtn span ,#sideMenuHamBtn span{
+    width: 58px;
+    height: 1px;
+    border: 7px solid #95989a;
+    display: block;
+}
+
+#headerHamBtn span:not(:first-child),
+#sideMenuHamBtn span:not(:first-child)
+{
+    margin-top: 13px;
+}
+
+#headerHamBtn{
+    float: left;
+}
+/* Css for Publisher logo*/
+
+.logo{
+    width: 485px;
+    height: 113px;
+    color: #000000;
+    font-family: "Playfair Display";
+    font-size: 85px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-top: 135px;
+    background-image: url('/images/logo.png');
+    background-position: center;
+    padding: 35px;
+}
+
+/* Css for nav*/
+
+#sideNavMenu ul{
+    margin: 0 auto;
+    padding-left: 93px;
+    padding-right: 107px;
+    margin-top: 179px;
+}
+
+#sideNavMenu ul li{
+    height: 184px;
+    line-height: 184px;
+    font-size: 60px;
+    font-family: "Atlas AAA";
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #95989a;
+    border-top: 1px solid #707070;
+}
+
+#sideNavMenu ul li:nth-child(7){
+    margin-top: 610px;
+    text-align: center;
+}
+
+#sideNavMenu ul li:hover{
+    cursor: pointer;
+}
+
+/*-------------------------------------*/
+
+/* Css for main weapper*/
+
+#mainWrapper{
+    display: block;
+    width: 1440px;
+    height: 8545px;
+    background-color: #ffffff; 
+}
+
+/* Main wrapper header / nav */
+
+#navHeader{
+    width: 1440px;
+    height: 220px;
+    border-bottom: 1px solid #95989a;
+    background-color: #ffffff;
+    display: block;
+}
+
+#navHeader div:nth-child(2){
+    width: 700px;
+    height: 69px;
+    color: #95989a;
+    font-family: "Atlas AAA";
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    float: left;
+    margin-left: 290px;
+    margin-top: 64px;
+}
+
+#currentSelectionIcone{
+    width: 103px;
+    height: 143px;
+    float: right;
+    margin-top: 46px;
+    margin-right: 61px;
+    background-image: url(/images/libraryCarIcon.png);
+    background-repeat: no-repeat;
+}
+
+/* Css for reach your daily goal*/
+
+#dailyGoal{
+    clear: both;
+    width: 700px;
+    height: 272px;
+    color: #000000;
+    font-family: "Atlas AAA";
+    font-size: 100px;
+    font-weight: 700;
+    float: left;
+    text-transform: uppercase;
+    margin-top: 175px;
+    margin-left: 148px;
+}
+
+.dailyGoalSiblings{
+    width: 1193px;
+    height: 347px;
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.16);
+    background-image: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);  
+    float: left;
+    margin-left: 124px;
+}
+
+
+main .dailyGoalSiblings:nth-child(2){
+    margin-top: 100px;
+}
+
+
+.dailyGoalSiblings p:nth-child(1){
+    width: 1100px;
+    height: 80px;
+    color: #454545;
+    font-family: Tinos;
+    font-size: 70px;
+    font-weight: 700;
+    margin-left: 92px;
+    margin-bottom: 2px;
+}
+
+.dailyGoalSiblings p:nth-child(2){
+    width: 310px;
+    height: 66px;
+    color: #737373;
+    font-family: "Source Sans Pro";
+    font-size: 53px;
+    font-weight: 400;
+    margin-left: 92px;
+    letter-spacing: 2.01px;
+}
+
+.dailyGoalSiblings span{
+    width: 126px;
+    height: 70px;
+    color: #737373;
+    font-family: "Source Sans Pro";
+    font-size: 60px;
+    font-style: italic;
+    margin-left: 157px;
+
+}
+
+.progressBar{
+    width: 900px;
+    height: 43px;
+    border: 1px solid #c4c9cf;
+    background-color: #ffffff;
+    margin-left: 200px;
+
+}
+
+.progressBar span{
+    width: 213px;
+    height: 43px;
+    background-color: #6776ff;
+    display: block;
+    margin-left: 0px;
+}
+
+/*--------------------------*/
+
+
+/* Css for currntly borrowed*/
+
+.clear-both{
+    clear: both;
+}
+
+
+#currntlyBorrowed{
+    margin-top: 224px;
+    width: 100%;
+    height: 20px;
+    border-bottom: 1px solid black;
+    text-align: center;  
+    line-height: 30px;
+
+}
+
+#currntlyBorrowed span{
+    font-size: 60px;
+    background-color: #F3F5F6;
+    margin-right: 300px;
+
+}
+
+/* Css for Book Challenge information*/
+
+.bookChallengInfo{
+    width: 1167px;
+    height: 815px;  
+    margin: 0 auto;
+    background-image: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%); 
+    margin-top: 184px;
+
+}
+
+.bookChallengInfo:first-child{
+    width: 1160px;
+    height: 530px;
+    display: block;
+}
+
+.bookChallengInfo section:nth-child(2){
+    width: 70%;
+    height: 270px;
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.16);
+    background-image: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
+    float: left;
+
+}
+
+.bookChallengInfo span:nth-child(1){
+    color: #454545;
+    font-family: Tinos;
+    font-size: 94px;
+    font-weight: 700;
+}
+
+.bookChallengInfo section:nth-child(3){
+    width: 29%;
+    height: 270px;
+    float: right;
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.16);
+    background-image: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
+    text-align: center;
+
+
+}
+
+.bookChallengInfo section:nth-child(3) img{
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.bookChallengInfo span:nth-child(2){
+    width: 158px;
+    height: 83px;
+    color: #000000;
+    font-family: "Atlas AAA";
+    font-size: 55px;
+    font-weight: 500;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Css for expend bowrrow*/
+
+#expendBorrow{
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 1167px;
+    height: 342px;
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.16);
+    background-image: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
+}
+
+#expendBorrow span{
+    width: 646px;
+    height: 212px;
+    color: #454545;
+    font-family: Tinos;
+    font-size: 94px;
+    font-weight: 700;
+    float: left;
+}
+
+#expendBorrowBtn{
+    background: none;
+    border: none;
+    float: right;
+    width: 193px;
+    height: 198px; 
+    background-image: url("/images/expBtn.png");
+    margin-right: 100px;
+    margin-top: 70px;
+}
+
+#expendBorrowBtn:hover{
+    cursor: pointer;
+}
+
+/* Css for books another try*/
+
+#bookAnotherTray{
+    margin-top: 200px;
+    width: 1364px;
+}
+
+
+#bookAnotherTray p{
+    margin: 0 auto;
+    width: 1100px;
+    height: 79px;
+    color: #000000;
+    font-family: "Atlas AAA";
+    font-size: 60px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+#bookAnotherTray article{
+    padding: 20px;
+    margin-top: 100px;
+    height: 871px;
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.16);
+    background-image: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
+}
+
+#bookAnotherTray article img{
+    width: 497px;
+    height: 749px;
+    border: 1px solid black;
+    float: left;
+}
+
+#bookAnotherTray article section:nth-child(2){
+    width: 638px;
+    height: 465px;
+    margin: 90px 96px 40px 0;
+    color: #000000;
+    font-family: Tinos;
+    font-size: 80px;
+    font-style: italic;
+    float: right;
+    word-wrap: break-word;
+}
+
+#bookAnotherTray button{
+    width: 491px;
+    height: 150px;
+    border: none;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Atlas AAA";
+    font-size: 64px;
+    font-weight: 700;
+    margin-left: 80px;
+}
+
+/* Css for recently finish book*/
+
+#recentlyFinish{
+    clear: both;
+}
+
+#recentlyFinish article{
+    padding: 20px;
+    margin-top: 100px;
+    height: 780px;
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.16);
+    background-image: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
+}
+
+#recentlyFinish p{
+    margin: 0 auto;
+    margin-top: 150px;
+    width: 1100px;
+    height: 79px;
+    color: #000000;
+    font-family: "Atlas AAA";
+    font-size: 60px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+#recentlyFinish article img{
+    width: 497px;
+    height: 749px;
+    border: 1px solid black;
+    float: left;
+}
+
+#recentlyFinish article section:nth-child(2){
+    width: 800px;
+    height: 400px;
+    color: #000000;
+    font-family: Tinos;
+    font-size: 94px;
+    font-weight: 700;
+    float: left;
+    word-wrap: break-word;
+    text-align: center;
+    line-height: 550px;
+}
+
+#recentlyFinish article section:nth-child(3){
+    width: 800px;
+    height: 354px;
+    color: #000000;
+    font-family: Tinos;
+    font-size: 94px;
+    font-weight: 700;
+    float: left;
+    word-wrap: break-word;
+    text-align: center;
+    line-height: 550px;
+    display: flex;
+    justify-content:center;
+
+}
+
+#recentlyFinish article section:nth-child(3) span{
+    width: 90px;
+    height: 88px;
+    flex-direction: row ;
+    background-image: url("/images/rateStar.png");
+    margin-left: 20px;
+}
+
+/* Css for wish list*/
+
+#wishList{
+    margin-top: 224px;
+    width: 100%;
+    height: 20px;
+    border-bottom: 1px solid black;
+    line-height: 30px;
+
+}
+
+
+
+#wishList span{
+    font-size: 60px;
+    background-color: #F3F5F6;
+    margin-left: 150px;
+    color: #000000;
+    font-family: "Atlas AAA";
+    font-size: 60px;
+    font-weight: 500;
+}
+
+#wishList article{
+    padding: 20px;
+    margin-top: 100px;
+    height: 376px;
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.16);
+    background-image: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
+}
+
+#wishList article img{
+    width: 242px;
+    height: 371px;
+    border: 1px solid black;
+    display: inline;
+
+}
+
+#wishList article section{
+    width: 1140px;
+    height: 371px;  
+    display: inline;
+    line-height: 371px;
+    color: #000000;
+    font-family: Tinos;
+    font-size: 75px;
+    font-weight: 700;
+
+}
+
+#wishList article section span{
+    color: #000000;
+    margin-left: 40px;
+    font-family: Tinos;
+    font-size: 75px;
+    font-weight: 700;
+}
+
+#wishList article section span span{
+    background-color: beige;
+    font-family: Tinos;
+    font-size: 200px;
+    font-weight: 700;
 }

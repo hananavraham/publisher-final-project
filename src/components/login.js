@@ -1,6 +1,9 @@
-import React from 'react';
+import React           from 'react';
 import { GoogleLogin } from 'react-google-login-component';
- 
+import SideNavMenu     from './SideNavMenu'
+import Header          from './Header'
+
+
 class Login extends React.Component{
  
   constructor (props, context) {
@@ -19,13 +22,17 @@ class Login extends React.Component{
   render () {
     return (
       <div>
-        <GoogleLogin socialId="yourClientID"
+        <div id="mainWrapper">
+          <Header title={'log In'}/>
+          <GoogleLogin socialId="yourClientID"
                      className="google-login"
                      scope="profile"
                      fetchBasicProfile={false}
                      responseHandler={this.responseGoogle}
                      buttonText="Login With Google"/>
+        </div>
       </div>
+
     );
   }
  
