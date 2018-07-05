@@ -1,6 +1,7 @@
 import React    from 'react';
 import Header   from './Header';
 import axios    from 'axios';
+import DailyGoal from './libraryCardComponents/DailyGoals';
 
 class LibraryCard extends React.Component{
  
@@ -41,22 +42,12 @@ class LibraryCard extends React.Component{
                 <div id="dailyGoal">
                     <p>reach<br></br> your daily</p>
                 </div>
-                <div className="dailyGoalSiblings">
-                    <p>{userData.goals[0].description} <span>3/10</span></p>
-
-                    <p>win 10 xp</p>
-                    <div className="progressBar">
-                        <span></span>
-                    </div>
-                </div>
-                <div className="dailyGoalSiblings">
-                    <p>read 5 days in row <span>4/5</span></p>
-                    <p>win 10 xp</p>
-                    <div className="progressBar">
-                        <span></span>
-                    </div>
-                </div>
-
+                {
+                    userData.goals.map((goal)=>{
+                        console.log(goal);
+                        return(<DailyGoal description={goal.description} target={goal.target} current={goal.current} key={goal.description}> </DailyGoal>)
+                    })
+                }
                 <div className="clear-both"></div>
                 <div id="currntlyBorrowed">
                     <span>
