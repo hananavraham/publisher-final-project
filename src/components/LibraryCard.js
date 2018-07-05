@@ -2,6 +2,8 @@ import React    from 'react';
 import Header   from './Header';
 import axios    from 'axios';
 import DailyGoal from './libraryCardComponents/DailyGoals';
+import CurrentlyBorrowd from './libraryCardComponents/CurrentlyBorrowd';
+
 
 class LibraryCard extends React.Component{
  
@@ -15,7 +17,7 @@ class LibraryCard extends React.Component{
   }
  
   componentWillMount(){
-    axios.get('https://hanan-lior-publisher-app.herokuapp.com/user/userByID/5b29fb01817b593f14eac973')
+    axios.get('https://hanan-lior-publisher-app.herokuapp.com/user/userByID/5b2a86ece7179a58928586e4')
      .then(userData=>{
         this.setState({
             isLoading: false,
@@ -27,8 +29,6 @@ class LibraryCard extends React.Component{
   
 
   render () {
-    console.log(this.state);
-    console.log(this.state.user);
     if(!this.state.user){
         return (<div>null</div>)
     }
@@ -44,7 +44,6 @@ class LibraryCard extends React.Component{
                 </div>
                 {
                     userData.goals.map((goal)=>{
-                        console.log(goal);
                         return(<DailyGoal description={goal.description} target={goal.target} current={goal.current} key={goal.description}> </DailyGoal>)
                     })
                 }
@@ -57,32 +56,15 @@ class LibraryCard extends React.Component{
                         2/2
                     </span>
                 </div>
-                <div id="mainBookChallengInfo">
-                    <article className="bookChallengInfo">
-                        <img src="/images/hazel-wood.png"/>
-                        <section>
-                            <span>
-                                5 minutes to complete chapter
-                            </span>
-                        </section>    
-                        <section>
-                            <img src="images/clock.png"></img>
-                            <span>2 hour</span>
-                        </section>
-                    </article>
-                    <article className="bookChallengInfo">
-                        <img src="images/red-book.png"></img>
-                        <section>
-                            <span>
-                                begin new chapter
-                            </span>
-                        </section>    
-                        <section>
-                            <img src="images/clock.png"></img>
-                            <span>5 days</span>
-                        </section>
-                    </article>
-                </div>
+
+                {
+                    userData.borrowd_books.map((book)=>{
+                        return(<CurrentlyBorrowd bookId={book.book_id} current_chapter={book.current_chapter} key={book.book_id}> </CurrentlyBorrowd>)
+                    })
+                }
+
+
+
                 <div className="clear-both">
                 </div>
                 <div id="expendBorrow">

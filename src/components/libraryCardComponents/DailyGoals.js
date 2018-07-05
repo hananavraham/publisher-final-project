@@ -6,7 +6,6 @@ class DailyGoal extends React.Component{
     super(props);
   
   }
- 
   
   render () {
     return (
