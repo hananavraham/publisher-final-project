@@ -1,10 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import Login from './components/login';
+import React                 from 'react';
+import ReactDOM              from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
-import LibraryCard from './components/LibraryCard';
+import App                   from './components/App';
+import './index.css';
 
 
-ReactDOM.render(<LibraryCard />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
