@@ -686,6 +686,104 @@ main .dailyGoalSiblings:nth-child(2){
     font-weight: 700;
 }
 
+
+/* Css for Messages */
+
+/* Css for Message item*/
+
+.messageHeader{
+    margin-left: 266px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #000000;
+    font-family: "Atlas AAA";
+    font-size: 50px;
+    font-weight: 300;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+.messageHeader span{
+    margin-left: 470px;
+}
+
+
+/* Style for "Rectangle" */
+#Messagebox{
+    width: 1440px;
+    height: 310px;
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.16);
+    background-image: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
+}
+
+#Messagebox img{
+    /*height: 174px;
+    width:175px;*/
+    margin-left: 30px;
+    margin-top: 84px;
+    float: left;
+}
+
+
+#Messagebox article{
+    margin-top: 93px;
+    width:1100px;
+    height: 200px;
+    float: left;
+}
+
+
+#Messagebox article span{
+    margin-left: 286px;
+}
+
+/* Style for "Hi! I have" */
+#Messagebox article section:nth-child(1){
+    width: 500px;
+    height: 83px;
+    color: #000000;
+    font-family: "Source Sans Pro";
+    font-size: 50px;
+    font-weight: 600;
+    float: left;
+}
+
+/* Style for "@enneOe" */
+#Messagebox article .person{
+    width: 220px;
+    height: 67px;
+    color: #007aff;
+    font-family: "Atlas Pro AAA";
+    font-size: 51px;
+    font-weight: 400;
+}
+
+
+
+/* Style for "27/12/17" */
+#Messagebox article span{
+    width: 178px;
+    height: 57px;
+    color: #707070;
+    font-family: Tinos;
+    font-size: 50px;
+    font-style: italic;
+    
+}
+
+#AddMessageBtn{
+    background: none;
+    border: none;
+    float: right;
+    width: 250px;
+    height: 250px; 
+    background-image: url("/images/addMessage.png");
+    margin-right: 100px;
+    margin-top: 30px;
+}
+
+
+
 /* Css for Also Like */
 
 
