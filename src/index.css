@@ -820,3 +820,168 @@ main .dailyGoalSiblings:nth-child(2){
     border: 1px solid;
     margin-top: 100px;
 }
+
+/*  Css for Book Component */
+
+/* Style for "Rectangle" */
+#book{
+    width: 1376px;
+    height: 5199px;
+    border: 1px solid #707070;
+    background-color: #ffffff; 
+}
+
+.bookImage{
+    width: 1400px;
+    height: 500px;
+}
+
+#book article{
+    margin-left: 100px;
+    width: 840px;
+    height: 150px;
+}
+
+#book span{
+    margin-top: 30px;
+    float: left;
+    color: #707070;
+    font-family: "Atlas AAA";
+    font-size: 70px;
+    font-weight: 400;
+}
+
+#book article img{
+    float: left;
+    margin-right: -50px;
+}
+
+#book h1{
+    width: 968px;
+    height: 60px;
+    color: #000000;
+    font-family: Tinos;
+    font-size: 120px;
+    font-weight: 700;
+    margin-left: 180px;
+}
+
+/* Style for "by: @Veron" */
+#book h2{
+    font-size: 60px;
+    /* Text style for "by:" */
+    color: #000000;
+    float: left;
+    margin-left: 180px;
+}
+
+#book h3{
+    width: 900px;
+    height: 79px;
+    color: #007aff;
+    font-family: "Atlas Pro AAA";
+    font-size: 60px;
+    font-weight: 300;
+}
+
+#book h4{
+    width: 259px;
+    height: 70px;
+    color: #000000;
+    font-family: "Atlas AAA";
+    font-size: 60px;
+    font-weight: 700;
+    margin-left: 180px;
+    margin-top: 150px;
+}
+
+#book p{
+    width: 900px;
+    height: 1000px;
+    color: #000000;
+    font-family: Tinos;
+    font-size: 60px;
+    font-weight: 400;
+    margin-left: 180px;
+}
+
+.bookCategory{
+    width: 261px;
+    height: 78px;
+    border-radius: 48px;
+    background-color: #d5b1ab;
+    margin-left: 180px;
+}
+
+.bookCategory h5{
+    width: 180px;
+    height: 69px;
+    color: #ffffff;
+    font-family: Tinos;
+    font-size: 60px;
+    font-weight: 400;
+    margin-left: 40px;
+}
+
+#writerProgress{
+    width:1000px;
+    height: 300px;
+}
+
+#writerProgress h3{
+    width: 1000px;
+    height: 70px;
+    color: #000000;
+    font-family: "Atlas AAA";
+    font-size: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: 180px;
+    margin-top: 40px;
+}
+
+#writerProgress article{
+    width: 1000px;
+    height: 90px;
+    border-radius: 45px;
+    border: 1px solid #707070;
+    background-color: #ffffff;
+    margin-left: 180px;
+}
+
+#writerProgress span{
+    width: 806px;
+    height: 61px;
+    border-radius: 45px;
+    background-color: #f2cdc4;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+#bookChoice{
+    width: 1376px;
+    height: 318px;
+    border: 1px solid #707070;
+    background-color: #000000;
+}
+
+#bookChoice article{
+    width: 283px;
+    height: 250px;
+    color: #ffffff;
+    font-family: "Atlas AAA";
+    font-size: 62px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+#bookChoice article:nth-child(1){
+    float: left;
+    margin-top: 20px;
+}
+
+#bookChoice span{
+    float: right;
+    margin-top: 5px;
+    margin-right: 80px;
+}

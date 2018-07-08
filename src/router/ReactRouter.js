@@ -4,6 +4,7 @@ import Route                                    from 'react-router-dom/Route';
 import LibraryCard                              from '../components/LibraryCard';
 import Profile                                  from '../components/Profile';
 import Messages                                 from '../components/Messages';
+import Book                                     from '../components/Book';
 
 
 
@@ -65,8 +66,7 @@ class ReactRouter extends React.Component{
                             <li><NavLink onClick={(e)=>{this.hideSideNav(e)}} to='/profile'>profile</NavLink></li>
                             <li><NavLink onClick={(e)=>{this.hideSideNav(e)}} to='/Messages'>messages</NavLink></li>
                             <li><NavLink to='/'>browse</NavLink></li>
-                            <li><NavLink to='/'>store</NavLink></li>
-                            <li><NavLink to='/'>reading club</NavLink></li>
+                            <li><NavLink onClick={(e)=>{this.hideSideNav(e)}} to='/Book'>book</NavLink></li>
                             <li><NavLink to='/'>log out</NavLink></li>
                         </ul>
                       
@@ -76,6 +76,7 @@ class ReactRouter extends React.Component{
                             <Route path='/librarycard' exact  component={LibraryCard}></Route>
                             <Route path='/profile' exact  component={Profile}></Route>
                             <Route path='/Messages' exact  component={Messages}></Route>
+                            <Route path='/Book' exact  component={Book}></Route>
                         </React.Fragment>
                      </div>
             </Router>
