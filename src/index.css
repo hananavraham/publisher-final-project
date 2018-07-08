@@ -619,18 +619,17 @@ main .dailyGoalSiblings:nth-child(2){
 
 /* Css for wish list*/
 
-#wishList{
+#wishListTitle{
     margin-top: 224px;
-    width: 100%;
+    width: 1433px;
     height: 20px;
     border-bottom: 1px solid black;
     line-height: 30px;
-
 }
 
 
 
-#wishList span{
+#wishListTitle span{
     font-size: 60px;
     background-color: #F3F5F6;
     margin-left: 150px;
@@ -639,6 +638,7 @@ main .dailyGoalSiblings:nth-child(2){
     font-size: 60px;
     font-weight: 500;
 }
+
 
 #wishList article{
     padding: 20px;
@@ -653,12 +653,13 @@ main .dailyGoalSiblings:nth-child(2){
     height: 371px;
     border: 1px solid black;
     display: inline;
+    margin-bottom: 30px;
 
 }
 
 #wishList article section{
     width: 1140px;
-    height: 371px;  
+    height: 400px;  
     display: inline;
     line-height: 371px;
     color: #000000;
@@ -667,6 +668,8 @@ main .dailyGoalSiblings:nth-child(2){
     font-weight: 700;
 
 }
+
+
 
 #wishList article section span{
     color: #000000;
@@ -681,4 +684,41 @@ main .dailyGoalSiblings:nth-child(2){
     font-family: Tinos;
     font-size: 200px;
     font-weight: 700;
+}
+
+/* Css for Also Like */
+
+
+
+#alsoLikeTitle{
+    margin-top: 224px;
+    width: 1433px;
+    height: 20px;
+    border-bottom: 1px solid black;
+    line-height: 30px;
+}
+
+
+
+#alsoLikeTitle span{
+    width: 563px;
+    height: 79px;
+    color: #000000;
+    font-family: "Atlas AAA";
+    font-size: 60px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: #FFF;
+    font-size: 60px;
+    margin-left: 150px;
+
+}
+
+
+#alsoLike{
+ 
+    width: 1433px;
+    height: 1020px;
+    border: 1px solid;
+    margin-top: 100px;
 }

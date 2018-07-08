@@ -1,7 +1,11 @@
-import React    from 'react';
-import Header   from './Header';
-import axios    from 'axios';
-import DailyGoal from './libraryCardComponents/DailyGoals';
+import React                from 'react';
+import Header               from './Header';
+import axios                from 'axios';
+import AlsoLike             from './libraryCardComponents/AlsoLike';
+import WishList             from './libraryCardComponents/WishList';
+import DailyGoal            from './libraryCardComponents/DailyGoals';
+import RecentlyFinished     from './libraryCardComponents/RecentlyFinished';
+import CurrentlyBorrowed    from './libraryCardComponents/CurrentlyBorrowed';
 import GiveAnotherTryToBook from './libraryCardComponents/GiveAnotherTryToBook';
     
 
@@ -11,8 +15,9 @@ class LibraryCard extends React.Component{
     super(props);
     this.state = {
         user: [],
+        unlikedBook:[],
         isLoading: false,
-        error: null,
+        error: null
         }      
     }
  
@@ -23,7 +28,9 @@ class LibraryCard extends React.Component{
         console.log(userData);
         this.setState({
             isLoading: false,
-            user: userData.data});
+            user: userData.data,
+            unlikedBook:userData.data.user.unliked_books
+            });
      })
     .catch(error => this.setState({
         error,
@@ -35,7 +42,7 @@ class LibraryCard extends React.Component{
 
   render () {
 
-    const { user, isLoading, error } = this.state;
+    const { user, unlikedBook, isLoading, error } = this.state;
     
     if (error) {
         return <p>{error.message}</p>;
@@ -51,7 +58,7 @@ class LibraryCard extends React.Component{
                 <div id="dailyGoal">
                     <p>reach<br></br> your daily</p>
                 </div>
-               {
+                {
                     !isLoading && user.user ? user.user.goals.map((goal)=>{
                          return(<DailyGoal description={goal.description} target={goal.target} current={goal.current} key={goal.description + 'i'}> </DailyGoal>)
                     }) : <div>no goals</div>
@@ -62,35 +69,14 @@ class LibraryCard extends React.Component{
                         currently bowrrowed
                     </span>
                     <span> 
-                        2/2
+                        {!isLoading && user.user ? user.user.borrowd_books.length : 0} 
                     </span>
                 </div>
-                <div id="mainBookChallengInfo">
-                    <article className="bookChallengInfo">
-                        <img src="/images/hazel-wood.png"/>
-                        <section>
-                            <span>
-                                5 minutes to complete chapter
-                            </span>
-                        </section>    
-                        <section>
-                            <img src="images/clock.png"></img>
-                            <span>2 hour</span>
-                        </section>
-                    </article>
-                    <article className="bookChallengInfo">
-                        <img src="images/red-book.png"></img>
-                        <section>
-                            <span>
-                                begin new chapter
-                            </span>
-                        </section>    
-                        <section>
-                            <img src="images/clock.png"></img>
-                            <span>5 days</span>
-                        </section>
-                    </article>
-                </div>
+                {
+                    !isLoading && user.user ? user.user.borrowd_books.map((book)=>{
+                         return(<CurrentlyBorrowed key={book.book_id} book_id={book.book_id}></CurrentlyBorrowed>)
+                    }) : <div>no goals</div>
+                }
                 <div className="clear-both">
                 </div>
                 <div id="expendBorrow">
@@ -99,39 +85,12 @@ class LibraryCard extends React.Component{
                 </div>
                 <div className="clear-both">
                 </div>
-             
-                <GiveAnotherTryToBook/>
-
-                <div id="recentlyFinish">
-                    <p>recently finished</p>
-                    <article>
-                        <img src="images/theMartian.png"></img>
-                        <section>
-                            Reate This Book
-                        </section>
-                        <section>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </section>
-                    </article>
-                </div>
-                <div id="wishList">
-                    <span>
-                        WishList
-                    </span>
-
-                    <div>
-                        <article>
-                            <img src="images/jarHearts.png"></img>
-                            <section>
-                               <span>Less than <span>48</span> days</span>
-                            </section>
-                        </article>
-                    </div>
-                </div>
+                {
+                    !isLoading && unlikedBook.length > 0 ? <GiveAnotherTryToBook unlikedBook={unlikedBook[0]}></GiveAnotherTryToBook> : <div>no unlike book</div>
+                }
+                <RecentlyFinished/>
+                <WishList/>
+                <AlsoLike/>
             </main>
   
       </div>       
