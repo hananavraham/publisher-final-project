@@ -35,7 +35,7 @@ class ReactRouter extends React.Component{
         this.props.display(sideNavDisplay.style.display);
     }
 
-     /* Hide the sideNav and update state on the App Component*/
+     /* Hide the sideNav and update state on the App Component + assign the title for the header*/
     hideSideNav(e){
         var sideNavDisplay = document.getElementById('sideNavMenu');
         if(sideNavDisplay.style.display == 'block'){
@@ -62,7 +62,7 @@ class ReactRouter extends React.Component{
                             <li><NavLink onClick={(e)=>{this.hideSideNav(e)}} to='/login'>log in</NavLink></li>
                             <li><NavLink onClick={(e)=>{this.hideSideNav(e)}} to='/librarycard'>library card</NavLink></li>
                             <li><NavLink onClick={(e)=>{this.hideSideNav(e)}} to='/profile'>profile</NavLink></li>
-                            <li><NavLink to='/'>message</NavLink></li>
+                            <li><NavLink to='/'>messages</NavLink></li>
                             <li><NavLink to='/'>browse</NavLink></li>
                             <li><NavLink to='/'>store</NavLink></li>
                             <li><NavLink to='/'>reading club</NavLink></li>

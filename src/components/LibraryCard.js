@@ -10,43 +10,51 @@ class LibraryCard extends React.Component{
   constructor (props) {
     super(props);
     this.state = {
-        isLoading: true,
-        user: ''
-    }   
-
-  }
+        user: [],
+        isLoading: false,
+        error: null,
+        }      
+    }
  
-  componentWillMount(){
+  componentDidMount(){
+    this.setState({isLoading:true})
     axios.get('https://hanan-lior-publisher-app.herokuapp.com/user/userByID/5b2a86ece7179a58928586e4')
-     .then(userData=>{
+    .then(userData=>{
+        console.log(userData);
         this.setState({
             isLoading: false,
             user: userData.data});
      })
-     .catch(err=>{console.log(err)})
+    .catch(error => this.setState({
+        error,
+        isLoading: false
+     }));
   }
 
   
 
   render () {
-    console.log(this.state);
-    console.log(this.state.user);
-    if(!this.state.user){
-        return (<div>null</div>)
+
+    const { user, isLoading, error } = this.state;
+    
+    if (error) {
+        return <p>{error.message}</p>;
     }
-    var userData = this.state.user.user;
-  
+
+    if (isLoading) {
+        return <p>Loading ...</p>;
+    }
+
     return (
      <div>
            <main>
                 <div id="dailyGoal">
                     <p>reach<br></br> your daily</p>
                 </div>
-                {
-                    userData.goals.map((goal)=>{
-                        console.log(goal);
-                        return(<DailyGoal description={goal.description} target={goal.target} current={goal.current} key={goal.description}> </DailyGoal>)
-                    })
+               {
+                    !isLoading && user.user ? user.user.goals.map((goal)=>{
+                         return(<DailyGoal description={goal.description} target={goal.target} current={goal.current} key={goal.description + 'i'}> </DailyGoal>)
+                    }) : <div>no goals</div>
                 }
                 <div className="clear-both"></div>
                 <div id="currntlyBorrowed">
