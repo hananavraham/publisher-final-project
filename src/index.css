@@ -1002,7 +1002,7 @@ main .dailyGoalSiblings:nth-child(2){
     width: 1440px;
     height: 1010px;
     background-color: #000;
-    background-image: url(/images/path-794.png);
+   /* background-image: url(/images/path-794.png);*/
 
 }
 

@@ -2,7 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import { Route, Redirect } from 'react-router';
 import Book from '../Book';
-class CurrentlyBorrowed extends React.Component{
+
+
+class ContinueWriting extends React.Component{
  
   constructor (props) {
     super(props);
@@ -29,7 +31,7 @@ class CurrentlyBorrowed extends React.Component{
             isLoading: false,
             book: bookData.data,
             book_name: bookData.data.book_name,
-            imgSrc: bookData.data.img
+            imgSrc: bookData.data.imgContinueWriting
             
         });
         axios.get(`https://hanan-lior-publisher-app.herokuapp.com/book/readingTime/${bookData.data.book_name}`)
@@ -56,36 +58,31 @@ class CurrentlyBorrowed extends React.Component{
          return <Redirect to='/Book'/>
     }
 
-
-    if(this.props.profile){
-        return (
-            <article className="bookChallengInfo" onClick={()=>{console.log('redirectToBook');
-                this.setState({renderBook: true})}}>
-            <img src={this.state.imgSrc}/>
-            <section>
-                <span>
-                   {!isLoading && book.book_name ? book.book_name : null}
-                </span>
-            </section>  
-        </article>
-        );
-    }
-
     return (       
-        <div id="mainBookChallengInfo">
-            <article className="bookChallengInfo" onClick={()=>{console.log('redirectToBook');
-                    this.setState({renderBook: true})}}>
-                <img src={this.state.imgSrc}/>
+         <div id="continueWritingBook" onClick={()=>{console.log('redirectToBook');
+                this.setState({renderBook: true})}}>
+            <article>
+                <img src={this.state.imgSrc}></img>
                 <section>
-                    <span>
-                       {!isLoading && book.book_name ? book.book_name : null}
-                    </span>
-                </section>    
-                <section>
-                    <img src="images/clock.png"></img>
-                    <span>{this.state.readingTime ? this.state.readingTime: null} min</span>
+                      {!isLoading && book.book_name ? book.book_name : null}
                 </section>
+                <table>
+                <tbody>
+                    <tr>
+                        <td> {!isLoading && book.chapters  ? book.chapters.length : 0}</td>
+                        <td> {!isLoading && book.followers  ? book.followers.length : 0}</td> 
+                    </tr>
+                    <tr>
+                        <td>Chapter</td>
+                        <td>followers</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <button>EDITING mode</button>
             </article>
+            <section>
+                <p>! Last Chapter wrote 12 Days Ago</p>
+            </section>
         </div>
     );
   
@@ -94,4 +91,4 @@ class CurrentlyBorrowed extends React.Component{
  
 }
  
-export default CurrentlyBorrowed;
+export default ContinueWriting;
