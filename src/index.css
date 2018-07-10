@@ -161,6 +161,7 @@ a:hover, a:focus, a:active {
     //display: none;
     position: absolute;
     top: 0;
+    z-index: 1;
 }
 
 
@@ -985,3 +986,350 @@ main .dailyGoalSiblings:nth-child(2){
     margin-top: 5px;
     margin-right: 80px;
 }
+
+
+/* Profile page*/
+/* Css for main profile*/
+
+
+#mainProfile{
+    width: 1440px;
+    height: 1258px;
+    position: relative;
+}
+
+#mainProfile section:nth-child(1){
+    width: 1440px;
+    height: 1010px;
+    background-color: #000;
+    background-image: url(/images/path-794.png);
+
+}
+
+#mainProfile img{
+    position: absolute;
+    top: 338px;
+    left: 170px;
+    z-index: 1;
+}
+
+#mainProfile section:nth-child(3){
+    width: 1332px;
+    height: 679px;
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.16);
+    background-image: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
+    position: absolute;
+    top:510px;
+    left: 54px;
+}
+
+#mainProfile section:nth-child(4){
+    width: 1440px;
+    height: 251px;
+    background-image: linear-gradient(180deg, #000000 0%, rgba(255, 255, 255, 0) 100%);
+
+} 
+
+
+#mainProfile section:nth-child(3) div{
+    margin-top: 40px;
+}
+
+#mainProfile section:nth-child(3) div span{
+    width: 252px;
+    height: 84px;
+    color: #007aff;
+    font-family: "Arial";
+    font-size: 72px;
+    font-weight: 400;
+    margin-left: 134px;
+}
+
+
+#mainProfile section:nth-child(3) div:nth-child(3){
+    width: 1012px;
+    height: 265px;
+    color: #000000;
+    font-family: Tinos;
+    font-size: 60px;
+    font-weight: 400;
+    margin-left: 134px
+}
+
+/* fid table*/
+#mainProfile table{
+    margin-top: 40px;
+    margin-left: 500px;
+}
+
+
+#mainProfile table tr td{
+    width: 220px;
+    height: 76px;
+    color: #454545;
+    font-family: "arial";
+    font-size: 65px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 7px;
+
+}
+
+#mainProfile table tr:nth-child(2) td{
+    width: 200px;
+    height: 45px;
+    color: #454545;
+    font-family: "arial";
+    font-size: 39px;
+    font-weight: 400;
+    padding-top: 0;
+    margin-top: 0;
+    line-height: 1px;
+
+}
+
+
+/* Css for continue writing*/
+#continueWriting{
+    margin-top: 224px;
+    width: 100%;
+    height: 20px;
+    border-bottom: 1px solid black;
+    text-align: center;  
+    line-height: 30px;
+
+}
+
+#continueWriting span{
+    font-size: 60px;
+    background-color: #F3F5F6;
+    margin-right: 300px;
+    font-size: 100px;
+    font-weight: 700;
+}
+
+#continueWritingBook{
+    margin-top: 200px;
+    width: 1364px;
+}
+
+
+
+
+#continueWritingBook article{
+    padding: 20px;
+    margin-top: 100px;
+    height: 871px;
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.16);
+    background-image: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
+}
+
+#continueWritingBook article img{
+    width: 326px;
+    height: 587px;
+    border: 1px solid black;
+    float: left;
+    margin-top: 82px; 
+    margin-left: 99px;
+}
+
+#continueWritingBook article section:nth-child(2){
+    width: 638px;
+    height: 272px;
+    margin-left: 100px; 
+    color: #000000;
+    font-family: Tinos;
+    float: left;
+    word-wrap: break-word;
+    font-family: Tinos;
+    font-size: 94px;
+    font-weight: 700;
+    margin-top: 82px; 
+}
+
+#continueWritingBook table{
+    float: left;
+    margin: 30px 0 0 100px;
+}
+
+#continueWritingBook table td{
+    padding-right: 1em;
+}
+
+#continueWritingBook table tr:nth-child(1){
+    width: 200px;
+    height: 87px;
+    color: #454545;
+    font-family: "Atlas AAA";
+    font-size: 74px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#continueWritingBook table tr:nth-child(2){
+    width: 227px;
+    height: 46px;
+    color: #454545;
+    font-family: "Atlas AAA";
+    font-size: 40px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+
+#continueWritingBook button{
+    width: 683px;
+    height: 150px;
+    border: 1px solid;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Atlas AAA";
+    font-size: 64px;
+    font-weight: 700;
+    margin-left: 80px;
+    float: right;
+    margin-top: 80px;
+}
+
+#continueWritingBook section p{
+    width: 1079px;
+    height: 99px;
+    color: #bc5151;
+    font-family: "Atlas AAA";
+    font-size: 75px;
+    font-weight: 500; 
+    margin-left: 40px;
+}
+
+/* Css for begin new book button*/
+
+
+#beginNewBook{
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 1167px;
+    height: 342px;
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.16);
+    background-image: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
+}
+
+#beginNewBook span{
+    width: 800px;
+    height: 212px;
+    color: #454545;
+    font-family: Tinos;
+    font-size: 94px;
+    font-weight: 700;
+    float: left;
+    line-height: 340px;
+    margin-left: 30px;
+
+}
+
+#beginNewBookBtn{
+    background: none;
+    border: none;
+    float: right;
+    width: 193px;
+    height: 198px; 
+    background-image: url("/images/expBtn.png");
+    margin-right: 100px;
+    margin-top: 70px;
+}
+
+
+
+/* Css for daily goal profile*/
+
+#profileDailyGoalSiblings{
+    width: 1193px;
+    height: 347px;
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.16);
+    background-image: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);  
+    float: left;
+    margin-left: 30px;
+    margin-top: 124px;
+    overflow: hidden;
+
+}
+
+
+
+#profileDailyGoalSiblings p:nth-child(1){
+    width: 1100px;
+    height: 80px;
+    color: #454545;
+    font-family: Tinos;
+    font-size: 70px;
+    font-weight: 700;
+    margin-left: 92px;
+    margin-bottom: 2px;
+}
+
+#profileDailyGoalSiblings p:nth-child(2){
+    width: 310px;
+    height: 66px;
+    color: #737373;
+    font-family: "Source Sans Pro";
+    font-size: 53px;
+    font-weight: 400;
+    margin-left: 92px;
+    letter-spacing: 2.01px;
+}
+
+#profileDailyGoalSiblings span{
+    width: 126px;
+    height: 70px;
+    color: #737373;
+    font-family: "Source Sans Pro";
+    font-size: 60px;
+    font-style: italic;
+    margin-left: 157px;
+
+}
+
+#profileDailyGoalSiblings  .progressBar{
+    width: 900px;
+    height: 43px;
+    border: 1px solid #c4c9cf;
+    background-color: #ffffff;
+    margin-left: 200px;
+    margin-top: 100px;
+
+
+
+}
+
+#profileDailyGoalSiblings .progressBar span{
+    width: 213px;
+    height: 43px;
+    display: block;
+    background-color: #f2cdc4;
+    margin-left: 0px;
+}
+
+
+#profileCurrntlyReading{
+
+    clear: both;
+    margin-top: 699px;
+    width: 100%;
+    height: 20px;
+    border-bottom: 1px solid black;
+    text-align: center;  
+    line-height: 30px;
+
+}
+
+#profileCurrntlyReading span{
+    font-size: 60px;
+    background-color: #F3F5F6;
+    margin-right: 300px;
+    font-size: 60px;
+    font-weight: 700;
+    text-transform: uppercase
+
+}
+

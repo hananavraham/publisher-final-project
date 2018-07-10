@@ -2,7 +2,7 @@ import React                                    from "react";
 import {BrowserRouter as Router ,Link ,NavLink} from 'react-router-dom';
 import Route                                    from 'react-router-dom/Route';
 import LibraryCard                              from '../components/LibraryCard';
-import Profile                                  from '../components/Profile';
+import Profile                                  from '../components/profile/Profile';
 import Messages                                 from '../components/Messages';
 import Book                                     from '../components/Book';
 
