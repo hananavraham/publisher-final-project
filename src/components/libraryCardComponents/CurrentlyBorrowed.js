@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-
+import { Route, Redirect } from 'react-router';
+import Book from '../Book';
 class CurrentlyBorrowed extends React.Component{
  
   constructor (props) {
@@ -11,8 +12,11 @@ class CurrentlyBorrowed extends React.Component{
         book_name:'',
         readingTime: '',
         imgSrc: '',
+        renderBook: false,
         error: null
       }  
+
+   // this.redirectToBook = this.redirectToBook.bind(this);
   }
  
 
@@ -42,14 +46,24 @@ class CurrentlyBorrowed extends React.Component{
     }));
   }
 
+ /* redirectToBook(){
+    console.log('redirectToBook');
+    return <Redirect to='/Book' />
+  }*/
+
   render () {
    
     const { book, isLoading, error } = this.state;
 
-  
+    
+    if(this.state.renderBook){
+         return <Redirect to='/Book' />
+    }
+
     return (       
         <div id="mainBookChallengInfo">
-            <article className="bookChallengInfo">
+            <article className="bookChallengInfo" onClick={()=>{console.log('redirectToBook');
+                    this.setState({renderBook: true})}}>
                 <img src={this.state.imgSrc}/>
                 <section>
                     <span>
