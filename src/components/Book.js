@@ -34,7 +34,7 @@ class Book extends React.Component{
   render () {
     return (
         <div id="book">
-            <img className="bookImage" src="/images/ronaldo.jpg"/>
+            <img className="bookImage" src={this.state.book.img}/>
             <article>
               <section>
                   <img src="/images/like.png"/>

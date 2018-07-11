@@ -1334,3 +1334,86 @@ main .dailyGoalSiblings:nth-child(2){
 
 }
 
+
+/* css for reading Book component */
+
+#chapterContent{
+    width: 900px;
+    height: 8500px;
+    color: #000000;
+    font-family: Tinos;
+    font-size: 60px;
+    font-weight: 400;
+    margin-left: 180px;
+}
+
+/* style for finish chapter button */
+#finishChapter{
+    margin-left: 250px;
+    width: 524px;
+    height: 150px;
+    border: 1px solid #007aff;
+    background-color: #6776ff;
+    color: #ffffff;
+    font-family: "Atlas AAA";
+    font-size: 64px;
+    font-weight: 700;
+}
+
+
+#book div{
+    width: 900px;
+    height: 180px;
+}
+
+
+/*style for Chapters header*/
+#book div h4{
+    width: 307px;
+    height: 70px;
+    color: #454545;
+    font-family: "Atlas AAA";
+    font-size: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/*style for chapters ellipse */
+.chapterEllipse{
+    width: 143px !important;
+    height: 142px !important;
+    border-radius: 250px;
+    float: left;
+    margin-left: 50px !important;
+    text-align: center;
+}
+
+.chapterEllipse b{
+    width: 60px;
+    height: 121px;
+    color: #ffffff;
+    font-family: "Atlas AAA";
+    font-size: 104px;
+    font-weight: 700;
+}
+
+/* style for current chapter ellipse */
+.currentChapterEllipse{
+    background-color: #454545;
+}
+
+/* style for finished chapters ellipse */
+.finishedChapterEllipse{
+    background-color: #bf988f;
+    background-image: url('/images/finishChapter.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* style for next chapters ellipse */
+.nextChapterEllipse{
+    background-color: #c4c9cf;
+}
+
+
+

@@ -10,14 +10,14 @@ class Message extends React.Component{
   render () {
     return (
         <section id="Messagebox">
-            <img src="/images/person1.png"></img>
+            <img src={this.props.user.img}></img>
             <article>
                 <section>
-                    Hi, i have question
+                    {this.props.message}
                 </section>
-                <span> 27/12/17 </span><br/>
+                <span> {this.props.date} </span><br/>
                 <section className="person">
-                    @enneOe
+                    @{this.props.person}
                 </section>
             </article>
         </section>

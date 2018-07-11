@@ -1,16 +1,57 @@
 import React from 'react';
+import axios from 'axios';
  
 class ReadingBook extends React.Component{
  
   constructor (props) {
     super(props);
-
+    this.state = {
+      book : {},
+      userId : null,
+      chpater : null
+    }
+    this.updateChapter = this.updateChapter.bind(this);
   }
  
+
+  componentDidMount() {
+     axios.get (`https://hanan-lior-publisher-app.herokuapp.com/book/GetBookById/5b2b323e3fae2300142ba375`, {
+      })
+      .then(response =>{
+        console.log(response.data);
+        console.log(response.data.chapters[0].content)
+        this.setState({
+            book:response.data,
+            userId : null,
+            chapter: null
+            });
+      })
+      .catch(err =>{
+        console.log(err);
+      });   
+}
+
+
+
+
+  updateChapter(){
+    axios.post (`https://book-payments.herokuapp.com/user/updateFinishChapter`, {
+        _id: this.state.userId,
+        bookId : this.state.book._id,
+        chapter: this.state.chapter
+      })
+     .then(bookData=>{
+        this.setState({
+            isLoading: false,
+            book: bookData.data,
+        });
+  })
+}
+
   render () {
     return (
         <div id="book">
-            <img className="bookImage" src="/images/hazel-wood.png"/>
+            <img className="bookImage" src={this.state.book.img}/>
             <article>
               <section>
                   <img src="/images/like.png"/>
@@ -25,17 +66,10 @@ class ReadingBook extends React.Component{
                   <span>10</span>
               </section>
             </article>
-            <h1>The hazel Wood</h1>
-            <h2>by:  </h2><h3>Ruth Man </h3>
-            <h4> Summary </h4>
-            <p>
-              theh pf;lsdfkj , and we make it possible,
-              for what we see its only for the mantion!!!
-              please, check it for few days and let me know the results.
-              waiting to see you as soon as possible.
-            </p>
+            <h1>{this.state.book.book_name}</h1>
+            <h2>by:  </h2><h3>{this.state.book.authorName}</h3>
             <section className="bookCategory">
-              <h5>#drama</h5>
+                <h5>#{this.state.book.categories}</h5>
             </section>
             <section id="writerProgress">
               <h3> writer progress </h3>
@@ -43,18 +77,20 @@ class ReadingBook extends React.Component{
                 <span> </span>
               </article>
             </section>
-            <section id="bookChoice">
-                <article>
-                  <img src="/images/eye.png"/>
-                  preview
-                </article>
-                <span>
-                  <article>
-                    <img src="/images/star.png"/>
-                      wishlist
-                  </article>
-                </span>
-            </section>
+            <p id="chapterContent">
+              
+            </p>
+            <button id="finishChapter" onclick="updateChapter">Finish Chapter</button>
+            <div>
+              <h4> chapters </h4>
+              <article className="chapterEllipse finishedChapterEllipse"/>
+              <article className="chapterEllipse currentChapterEllipse">
+                <b> 3 </b>
+              </article>
+              <article className="chapterEllipse nextChapterEllipse">
+                <b> 4 </b>
+              </article>
+            </div>
         </div>
     );
   }
