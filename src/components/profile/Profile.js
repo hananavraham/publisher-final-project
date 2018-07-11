@@ -77,6 +77,11 @@ class Profile extends React.Component{
 
                     </section>
                 </div>
+                  <div id="continueWriting">
+                    <span>
+                        continue writing
+                    </span>
+                </div>
                 {
                     !isLoading && user.user ? user.user.currently_writing.map((book)=>{
                          return(<ContinueWriting key={book+'i'} book_id={book}></ContinueWriting>)
@@ -89,13 +94,21 @@ class Profile extends React.Component{
                     <span> 
                      {user.user.borrowd_books.length}
                     </span>
+
                 </div>
+
+
               	{
                     !isLoading && user.user ? user.user.borrowd_books.map((book)=>{
                          return(<CurrentlyBorrowed key={book.book_id} book_id={book.book_id} profile={'profile'}></CurrentlyBorrowed>)
                     }) : <div></div>
                 }
+                 <div id="beginNewBook">
+                    <span>Begin New Book</span>
+                    <button id="beginNewBookBtn"></button>
                 </div>
+            </div>
+
     		);
     }
     return (

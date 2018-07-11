@@ -1091,6 +1091,7 @@ main .dailyGoalSiblings:nth-child(2){
 
 /* Css for continue writing*/
 #continueWriting{
+    clear: both;
     margin-top: 224px;
     width: 100%;
     height: 20px;
@@ -1314,7 +1315,7 @@ main .dailyGoalSiblings:nth-child(2){
 #profileCurrntlyReading{
 
     clear: both;
-    margin-top: 699px;
+    margin-top: 300px;
     width: 100%;
     height: 20px;
     border-bottom: 1px solid black;
