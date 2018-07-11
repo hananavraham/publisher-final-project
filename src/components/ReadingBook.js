@@ -22,8 +22,7 @@ class ReadingBook extends React.Component{
         console.log(response.data.chapters[0].content)
         this.setState({
             book:response.data,
-            userId : null,
-            chapter: null
+            chapter:response.data.chapters[response.data.chapters.length -1].content
             });
       })
       .catch(err =>{
@@ -78,7 +77,7 @@ class ReadingBook extends React.Component{
               </article>
             </section>
             <p id="chapterContent">
-              
+               {this.state.chapter}
             </p>
             <button id="finishChapter" onclick="updateChapter">Finish Chapter</button>
             <div>
