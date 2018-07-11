@@ -12,6 +12,7 @@ class ContinueWriting extends React.Component{
         isLoading: false,
         book: '',
         book_name:'',
+        book_id: '',
         readingTime: '',
         imgSrc: '',
         renderBook: false,
@@ -31,6 +32,7 @@ class ContinueWriting extends React.Component{
             isLoading: false,
             book: bookData.data,
             book_name: bookData.data.book_name,
+            book_id: bookData.data.book_id,
             imgSrc: bookData.data.imgContinueWriting
             
         });
@@ -53,11 +55,12 @@ class ContinueWriting extends React.Component{
    
     const { book, isLoading, error } = this.state;
 
-    
-    if(this.state.renderBook){
-         return <Redirect to='/Book'/>
-    }
 
+    if (this.state.renderBook)
+            return (<Redirect to={{
+                pathname: '/Book',
+                state: { referrer: this.props.book_id}
+     }} />)
     return (       
          <div id="continueWritingBook" onClick={()=>{console.log('redirectToBook');
                 this.setState({renderBook: true})}}>
