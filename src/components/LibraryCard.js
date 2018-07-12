@@ -77,8 +77,10 @@ class LibraryCard extends React.Component{
               {
                     !isLoading && user.user ? user.user.borrowd_books.map((book)=>{
                          return(<CurrentlyBorrowed user={this.state.user} key={book.book_id} book_id={book.book_id}></CurrentlyBorrowed>)
+
                     }) : <div></div>
                 }  
+
                 <div className="clear-both">
                 </div>
                 <div id="expendBorrow">
@@ -94,10 +96,17 @@ class LibraryCard extends React.Component{
                 {
                     !isLoading && recently_finished.length > 0 ? <RecentlyFinished userId={user.user._id} recently_finished={recently_finished[Math.floor(Math.random() * recently_finished.length)]}></RecentlyFinished> : <div></div>
                 }
-                
+                <RecentlyFinished/>
+            
+                 <div id="wishListTitle">
+                    <span>
+                        WishList
+                    </span>
+                </div>
                 {
                     !isLoading && user.user ? user.user.wishlist.map((book)=>{
-                         return(<WishList user={this.state.user} key={book.book_id} book_id={book.book_id}></WishList>)
+
+                         return(<WishList user={this.state.user} key={book.book_id + 'i'} book_id={book.book_id}></WishList>)
                     }) : <div></div>
                 }
                 <AlsoLike/>

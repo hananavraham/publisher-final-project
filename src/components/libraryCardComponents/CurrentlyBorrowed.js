@@ -55,9 +55,7 @@ class CurrentlyBorrowed extends React.Component{
      if (this.state.renderBook)
             return (<Redirect to={{
                 pathname: '/ReadingBook',
-                state: { referrer:{ book_id: this.props.book_id , user: this.props.user}}
-     }} />)
-
+                state: { referrer:{ book_id: this.props.book_id , user: this.props.user}}}}/>)
 
     if(this.props.profile){
         return (
