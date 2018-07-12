@@ -755,7 +755,7 @@ main .dailyGoalSiblings:nth-child(2){
 
 /* Style for "@enneOe" */
 #Messagebox article .person{
-    width: 220px;
+    width: 350px;
     height: 67px;
     color: #007aff;
     font-family: "Atlas Pro AAA";
@@ -1371,7 +1371,7 @@ main .dailyGoalSiblings:nth-child(2){
 
 #chapterContent{
     width: 900px;
-    height: 8500px;
+    height: 9500px;
     color: #000000;
     font-family: Tinos;
     font-size: 60px;

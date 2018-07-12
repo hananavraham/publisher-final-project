@@ -54,7 +54,7 @@ class Profile extends React.Component{
                             <table>
                             <tbody>
                                 <tr>
-                                    <td>{user.user.borrowd_books.length}</td>
+                                    <td>{user.user.currently_writing.length}</td>
                                     <td>{user.user.followers.length}</td> 
                                     <td>{user.user.following.length}</td>
                                 </tr>

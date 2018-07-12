@@ -63,13 +63,12 @@ class ReactRouter extends React.Component{
                     </div>
                     <div className="logo"></div>
                         <ul id="sideNavLinkUl">
-                            <li><NavLink onClick={(e)=>{this.hideSideNav(e)}} to='/login'>log in</NavLink></li>
+                            <li><NavLink onClick={(e)=>{this.hideSideNav(e)}} to='/Login'>log in</NavLink></li>
                             <li><NavLink onClick={(e)=>{this.hideSideNav(e)}} to='/librarycard'>library card</NavLink></li>
                             <li><NavLink onClick={(e)=>{this.hideSideNav(e)}} to='/profile'>profile</NavLink></li>
                             <li><NavLink onClick={(e)=>{this.hideSideNav(e)}} to='/Messages'>messages</NavLink></li>
                             <li><NavLink to='/'>browse</NavLink></li>
-                            <li><NavLink onClick={(e)=>{this.hideSideNav(e)}} to='/ReadingBook'>ReadingBook</NavLink></li>
-                            <li><NavLink onClick={(e)=>{this.hideSideNav(e)}} to='/Book'>Book</NavLink></li>
+                            <li><NavLink to='/'>Log Out</NavLink></li>
                         </ul>
                       
                      </nav>
@@ -78,8 +77,6 @@ class ReactRouter extends React.Component{
                             <Route path='/librarycard' exact  component={LibraryCard}></Route>
                             <Route path='/profile' exact   render={(props) => <Profile test={'test'} isAuthed={true} />}></Route>
                             <Route path='/Messages' exact  component={Messages}></Route>
-                            <Route path='/ReadingBook' exact  component={ReadingBook}></Route>
-                            <Route path='/Book' exact  component={Book}></Route>
                         </React.Fragment>
                      </div>
             </Router>
