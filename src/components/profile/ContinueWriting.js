@@ -63,8 +63,7 @@ class ContinueWriting extends React.Component{
                 state: { referrer: this.props.book_id}
      }} />)
     return (       
-         <div id="continueWritingBook" onClick={()=>{console.log('redirectToBook');
-                this.setState({renderBook: true})}}>
+         <div id="continueWritingBook">
             <article>
                 <img src={this.state.imgSrc}></img>
                 <section>

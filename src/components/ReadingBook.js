@@ -114,9 +114,17 @@ class ReadingBook extends React.Component{
             </article>
             <h1>{book.book_name}</h1>
             <h2>by:  </h2><h3>{book.authorName}</h3>
-            <section className="bookCategory">
-                <h5>#{book.categories}</h5>
-            </section>
+
+            <div>
+                {
+                    this.state.book.categories ? this.state.book.categories.map(category=>{
+                      return(<section className="ReadingbookCategory">
+                          <h5>#{category}</h5>
+                        </section>) 
+                    })  : <div></div>
+                }
+            </div>
+
             <section id="writerProgress">
               <h3> writer progress </h3>
               <article> 

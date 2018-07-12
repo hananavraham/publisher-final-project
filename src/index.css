@@ -938,12 +938,18 @@ main .dailyGoalSiblings:nth-child(2){
     margin-left: 180px;
 }
 
+.bookCategory:nth-child(1){
+    margin-left: 180px;
+}
 .bookCategory{
-    width: 261px;
+    width: 250px;
     height: 78px;
     border-radius: 48px;
     background-color: #d5b1ab;
-    margin-left: 180px;
+    margin-left: 20px;
+    float: left;
+    line-height: 78px;
+
 }
 
 .bookCategory h5{
@@ -954,6 +960,29 @@ main .dailyGoalSiblings:nth-child(2){
     font-size: 60px;
     font-weight: 400;
     margin-left: 40px;
+    display: inline;
+}
+
+
+.ReadingbookCategory{
+    width: 250px;
+    height: 78px;
+    border-radius: 48px;
+    background-color: #d5b1ab;
+    /*margin-left: 20px;*/
+    float: left;
+    line-height: 78px;
+}
+
+.ReadingbookCategory h5{
+    width: 180px;
+    height: 69px;
+    color: #ffffff;
+    font-family: Tinos;
+    font-size: 60px;
+    font-weight: 400;
+    margin-left: 40px;
+    display: inline;
 }
 
 #writerProgress{

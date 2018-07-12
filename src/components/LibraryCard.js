@@ -96,7 +96,6 @@ class LibraryCard extends React.Component{
                 {
                     !isLoading && recently_finished.length > 0 ? <RecentlyFinished userId={user.user._id} recently_finished={recently_finished[Math.floor(Math.random() * recently_finished.length)]}></RecentlyFinished> : <div></div>
                 }
-                <RecentlyFinished/>
             
                  <div id="wishListTitle">
                     <span>

@@ -53,7 +53,7 @@ class GiveAnotherTryToBook extends React.Component{
         <div id="bookAnotherTray">
             <p>give these books another try!</p>
             <article>
-                <img src="images/whanBook.png"></img>
+                <img src={this.state.book.imgContinueWriting}></img>
                 <section>
                     "...loading"
                 </section>

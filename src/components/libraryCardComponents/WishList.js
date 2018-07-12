@@ -40,7 +40,7 @@ class WishList extends React.Component{
     if (this.state.renderBook)
         return (<Redirect to={{
             pathname: '/Book',
-            state: { referrer:{ book_id: this.props.book_id , user: this.props.user}}
+            state: { referrer:{ book_id: this.props.book_id , user: this.props.user, from:"wishlist"}}
      }} />)
 
         return (

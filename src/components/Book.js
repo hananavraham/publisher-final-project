@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-
+import { Route, Redirect } from 'react-router';
+import LibraryCard from './LibraryCard';
  
 class Book extends React.Component{
  
@@ -26,7 +27,7 @@ class Book extends React.Component{
         console.log(response.data.chapters[0].content)
         this.setState({
             book:response.data,
-            summary:response.data.chapters[0].content
+            summary:response.data.chapters[0].content.substring(0,200)
             });
       })
       .catch(err =>{
@@ -36,13 +37,12 @@ class Book extends React.Component{
 
   borrowBook(){
       axios.post(`https://hanan-lior-publisher-app.herokuapp.com/user/borrowNewBook`,{
-        _id: this.state.user.user._id,
-        book_id: this.props.book_id,
-        current_chapter : 0
+        _id: this.props.location.state.referrer.user.user._id,
+        book: this.props.location.state.referrer.book_id
       })
       .then(function (response) {
           console.log(response);
-        })
+      })
       .catch(function (error) {
           console.log(error);
         });
@@ -50,8 +50,8 @@ class Book extends React.Component{
 
   wishBook(){
       axios.post(`https://hanan-lior-publisher-app.herokuapp.com/user/AddWishListUser`,{
-        _id: this.state.user.user._id,
-        bookId :this.props.book_id
+        _id: this.props.location.state.referrer.user.user._id,
+        bookId:this.props.location.state.referrer.book_id
       })
       .then(function (response) {
           console.log(response);
@@ -86,9 +86,15 @@ class Book extends React.Component{
             <p>
               {this.state.summary}
             </p>
-            <section className="bookCategory">
-              <h5>#{this.state.book.categories}</h5>
-            </section>
+            <div>
+                {
+                    this.state.book.categories ? this.state.book.categories.map(category=>{
+                      return(<section className="bookCategory">
+                          <h5>#{category}</h5>
+                        </section>) 
+                    })  : <div></div>
+                }
+            </div>
             <section id="writerProgress">
               <h3> writer progress </h3>
               <article> 
