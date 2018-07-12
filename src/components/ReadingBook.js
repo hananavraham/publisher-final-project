@@ -77,7 +77,7 @@ class ReadingBook extends React.Component{
               </article>
             </section>
             <p id="chapterContent">
-               {this.state.chapter}
+               {this.state.book.chapters ? this.state.book.chapters[0].content : <div>sdfs</div>}
             </p>
             <button id="finishChapter" onclick="updateChapter">Finish Chapter</button>
             <div>
