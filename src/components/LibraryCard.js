@@ -91,9 +91,16 @@ class LibraryCard extends React.Component{
                     !isLoading && unlikedBook.length > 0 ? <GiveAnotherTryToBook userId={user.user._id} unlikedBook={unlikedBook[Math.floor(Math.random() * unlikedBook.length)]}></GiveAnotherTryToBook> : <div></div>
                 }
                 <RecentlyFinished/>
+            
+                 <div id="wishListTitle">
+                    <span>
+                        WishList
+                    </span>
+                </div>
                 {
                     !isLoading && user.user ? user.user.wishlist.map((book)=>{
-                         return(<WishList user={this.state.user} key={book.book_id} book_id={book.book_id}></WishList>)
+
+                         return(<WishList user={this.state.user} key={book.book_id + 'i'} book_id={book.book_id}></WishList>)
                     }) : <div></div>
                 }
                 <AlsoLike/>

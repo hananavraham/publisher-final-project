@@ -19,7 +19,7 @@ class Book extends React.Component{
 
   componentDidMount() {
 
-     axios.get (`https://hanan-lior-publisher-app.herokuapp.com/book/GetBookById/${this.props.location.state.referrer}`, {
+     axios.get (`https://hanan-lior-publisher-app.herokuapp.com/book/GetBookById/${this.props.location.state.referrer.book_id}`, {
       })
       .then(response =>{
         console.log(response.data);
@@ -69,15 +69,15 @@ class Book extends React.Component{
             <article>
               <section>
                   <img src="/images/like.png"/>
-                  <span>{this.state.book.likes} </span>
+                  <span>1 </span>
               </section>
               <section>
                   <img src="/images/comment.png"/>
-                  <span>{this.state.book.reviews}</span>
+                  <span>1</span>
                 </section>
               <section>
                   <img src="/images/share.png"/>
-                  <span>{this.state.book.shares}</span>
+                  <span>1</span>
               </section>
             </article>
             <h1>{this.state.book.book_name}</h1>

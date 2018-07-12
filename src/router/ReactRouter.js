@@ -79,10 +79,6 @@ class ReactRouter extends React.Component{
                             <Route path='/Messages' exact  component={Messages}></Route>
                             <Route path='/ReadingBook' exact  component={ReadingBook}></Route>
                             <Route path='/Book' exact  component={Book}></Route>
-<<<<<<< HEAD
-                            
-=======
->>>>>>> 3a1d6d59503a5e4b0e1c42f5729b156279ef9857
                         </React.Fragment>
                      </div>
             </Router>

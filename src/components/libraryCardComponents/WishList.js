@@ -10,28 +10,29 @@ class WishList extends React.Component{
       isLoading: false,
       book: '',
       book_name:'',
-      imgSrc: ''
+      imgSrc: '',
     }
   }
  
 
   componentDidMount(){
-  this.setState({isLoading:true})
-  setTimeout(()=>{},10000);
-    axios.get(`https://hanan-lior-publisher-app.herokuapp.com/book/GetBookById/${this.props.book_id}`)
-     .then(bookData=>{
-        this.setState({
-            isLoading: false,
-            book: bookData.data,
-            book_name: bookData.data.book_name,
-            imgSrc: bookData.data.img
-            
-        });
-     })
-    .catch(error => this.setState({
-        error,
-        isLoading: false
-    }));
+    this.setState({isLoading:true})
+      console.log(this.props.book_id)
+      axios.get(`https://hanan-lior-publisher-app.herokuapp.com/book/GetBookById/${this.props.book_id}`)
+       .then(bookData=>{
+          this.setState({
+              isLoading: false,
+              book: bookData.data,
+              book_name: bookData.data.book_name,
+              imgSrc: bookData.data.img
+              
+          });
+       })
+      .catch(error => this.setState({
+          error,
+          isLoading: false
+      }));
+    
   }
 
 
@@ -43,22 +44,17 @@ class WishList extends React.Component{
      }} />)
 
         return (
-          <div>
-          <div id="wishListTitle">
-              <span>
-                  WishList
-              </span>
-          </div>
+    
           <div id="wishList">
               <article onClick={()=>{console.log('redirectToBook');
-                this.setState({renderBook: true})}}>>
+                this.setState({renderBook: true})}}>
                   <img src={this.state.imgSrc}></img>
                   <section>
                      <span>{this.state.book_name}</span>
                   </section>
               </article>
           </div>
-          </div>
+   
       );
   
     
