@@ -1,12 +1,13 @@
 import React                                    from "react";
+import { GoogleLogin }                          from 'react-google-login';
 import {BrowserRouter as Router ,Link ,NavLink} from 'react-router-dom';
 import Route                                    from 'react-router-dom/Route';
 import LibraryCard                              from '../components/LibraryCard';
 import Profile                                  from '../components/profile/Profile';
 import Messages                                 from '../components/Messages';
 import Book                                     from '../components/Book';
-import ReadingBook                                     from '../components/ReadingBook';
-
+import Login                                    from '../components/Login';
+import ReadingBook                              from '../components/ReadingBook';
 
 
 
@@ -73,7 +74,7 @@ class ReactRouter extends React.Component{
                       
                      </nav>
                        <React.Fragment>
-                            <Route path='/' exact  render={()=>{return (<h1>Log in</h1>)}}></Route>
+                            <Route path='/' exact component={Login}>></Route>
                             <Route path='/librarycard' exact  component={LibraryCard}></Route>
                             <Route path='/profile' exact  component={Profile}></Route>
                             <Route path='/Messages' exact  component={Messages}></Route>

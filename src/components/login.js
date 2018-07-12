@@ -1,41 +1,54 @@
-import React           from 'react';
-import { GoogleLogin } from 'react-google-login-component';
-import SideNavMenu     from './SideNavMenu'
-import Header          from './Header'
+import React, { Component } from 'react';
+import { GoogleLogin } from 'react-google-login';
 
+class Login extends Component {
 
-class Login extends React.Component{
- 
-  constructor (props, context) {
-    super(props, context);
-  }
- 
-  responseGoogle (googleUser) {
-    var id_token = googleUser.getAuthResponse().id_token;
-    var googleId = googleUser.getId();
-    
-    console.log({ googleId });
-    console.log({accessToken: id_token});
-    //anything else you want to do(save to localStorage)...
-  }
- 
-  render () {
-    return (
-      <div>
-        <div id="mainWrapper">
-          <Header title={'log In'}/>
-          <GoogleLogin socialId="yourClientID"
-                     className="google-login"
-                     scope="profile"
-                     fetchBasicProfile={false}
-                     responseHandler={this.responseGoogle}
-                     buttonText="Login With Google"/>
-        </div>
-      </div>
+    constructor() {
+        super();
+        this.state = { isAuthenticated: false, user: null, token: ''};
+    }
 
-    );
-  }
- 
+    logout = () => {
+        this.setState({isAuthenticated: false, token: '', user: null})
+    };
+  
+
+    googleResponse = (e) => {console.log(e)};
+    onFailure = (error) => {
+      alert(error);
+    }
+    render() {
+        let content = !!this.state.isAuthenticated ?
+            (
+                <div>
+                    <p>Authenticated</p>
+                    <div>
+                        {this.state.user.email}
+                    </div>
+                    <div>
+                        <button onClick={this.logout} className="button">
+                            Log out
+                        </button>
+                    </div>
+                </div>
+            ) :
+            (
+                <div>
+                    <GoogleLogin
+                        clientId="431142717401-nogf6vt64266pnq75gpi51jhegl9qalv.apps.googleusercontent.com"
+                        buttonText="Login"
+                        onSuccess={this.googleResponse}
+                        onFailure={this.googleResponse}
+                    />
+                </div>
+            );
+
+        return (
+            <div className="App">
+                {content}
+            </div>
+        );
+    }
 }
- 
+
 export default Login;

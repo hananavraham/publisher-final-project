@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Route, Redirect } from 'react-router';
 import Book from '../Book';
+import ReadingBook from '../ReadingBook';
 
 
 class ContinueWriting extends React.Component{
@@ -58,7 +59,7 @@ class ContinueWriting extends React.Component{
 
     if (this.state.renderBook)
             return (<Redirect to={{
-                pathname: '/Book',
+                pathname: '/ReadingBook',
                 state: { referrer: this.props.book_id}
      }} />)
     return (       
