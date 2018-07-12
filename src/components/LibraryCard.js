@@ -74,7 +74,7 @@ class LibraryCard extends React.Component{
                 </div>
                 {
                     !isLoading && user.user ? user.user.borrowd_books.map((book)=>{
-                         return(<CurrentlyBorrowed key={book.book_id} book_id={book.book_id}></CurrentlyBorrowed>)
+                         return(<CurrentlyBorrowed user={this.state.user} key={book.book_id} book_id={book.book_id}></CurrentlyBorrowed>)
                     }) : <div>no goals</div>
                 }
                 <div className="clear-both">

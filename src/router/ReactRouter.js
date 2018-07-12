@@ -77,6 +77,9 @@ class ReactRouter extends React.Component{
                             <Route path='/librarycard' exact  component={LibraryCard}></Route>
                             <Route path='/profile' exact   render={(props) => <Profile test={'test'} isAuthed={true} />}></Route>
                             <Route path='/Messages' exact  component={Messages}></Route>
+                            <Route path='/ReadingBook' exact  component={ReadingBook}></Route>
+                            <Route path='/Book' exact  component={Book}></Route>
+                            
                         </React.Fragment>
                      </div>
             </Router>
