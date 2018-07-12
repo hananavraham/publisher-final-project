@@ -15,7 +15,7 @@ class ReadingBook extends React.Component{
  
 
   componentDidMount() {
-     axios.get (`https://hanan-lior-publisher-app.herokuapp.com/book/GetBookById/5b2b323e3fae2300142ba375`, {
+     axios.get (`https://hanan-lior-publisher-app.herokuapp.com/book/GetBookById/${this.props.location.state.referrer}`, {
       })
       .then(response =>{
         console.log(response.data);
