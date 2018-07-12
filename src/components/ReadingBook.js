@@ -15,7 +15,7 @@ class ReadingBook extends React.Component{
  
 
   componentDidMount() {
-     axios.get (`https://hanan-lior-publisher-app.herokuapp.com/book/GetBookById/${this.props.location.state.referrer}`, {
+     axios.get (`https://hanan-lior-publisher-app.herokuapp.com/book/GetBookById/${this.props.location.state.referrer.book_id}`, {
       })
       .then(response =>{
         console.log(response.data);
@@ -29,7 +29,6 @@ class ReadingBook extends React.Component{
         console.log(err);
       });   
 }
-
 
 
 
@@ -48,6 +47,8 @@ class ReadingBook extends React.Component{
 }
 
   render () {
+
+    
     return (
         <div id="book">
             <img className="bookImage" src={this.state.book.img}/>
@@ -79,7 +80,7 @@ class ReadingBook extends React.Component{
             <p id="chapterContent">
                {this.state.chapter}
             </p>
-            <button id="finishChapter" onclick="updateChapter">Finish Chapter</button>
+            <button id="finishChapter" onClick={this.updateChapter}>Finish Chapter</button>
             <div>
               <h4> chapters </h4>
               <article className="chapterEllipse finishedChapterEllipse"/>

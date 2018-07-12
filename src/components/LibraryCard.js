@@ -86,7 +86,7 @@ class LibraryCard extends React.Component{
                 <div className="clear-both">
                 </div>
                 {
-                    !isLoading && unlikedBook.length > 0 ? <GiveAnotherTryToBook unlikedBook={unlikedBook[0]}></GiveAnotherTryToBook> : <div>no unlike book</div>
+                    !isLoading && unlikedBook.length > 0 ? <GiveAnotherTryToBook userId={user.user._id} unlikedBook={unlikedBook[Math.floor(Math.random() * unlikedBook.length)]}></GiveAnotherTryToBook> : <div>no unlike book</div>
                 }
                 <RecentlyFinished/>
                 <WishList/>

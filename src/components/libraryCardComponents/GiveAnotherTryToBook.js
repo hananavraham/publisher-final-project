@@ -10,6 +10,8 @@ class GiveAnotherTryToBook extends React.Component{
         isLoading: false,
         error: null,
         }      
+
+    this.giveAnotherTryToBook = this.giveAnotherTryToBook.bind(this);
   }
 
   
@@ -27,6 +29,19 @@ class GiveAnotherTryToBook extends React.Component{
         error,
         isLoading: false
      }));
+  }
+
+  giveAnotherTryToBook(){
+    console.log(this.props.userId);
+      axios.post('https://hanan-lior-publisher-app.herokuapp.com/user/borrowNewBook' , {
+        _id: this.props.userId ,
+        book: this.props.unlikedBook
+      });
+      axios.post('https://hanan-lior-publisher-app.herokuapp.com/user/removeFromUnliked' , {
+          _id: this.props.userId ,
+          book: this.props.unlikedBook
+      })
+      .catch(error => (console.log(error))); 
   }
   
   render () {
@@ -54,9 +69,9 @@ class GiveAnotherTryToBook extends React.Component{
             <article>
                 <img src={book.img}></img>
                 <section>
-                    {book.reviews[0].text}
+                    {book.reviews[0] ? book.reviews[0].text : "no reviews"}
                 </section>
-                <button>start again</button>
+                <button onClick={this.giveAnotherTryToBook}>start again</button>
             </article>
         </div>
     );

@@ -375,12 +375,13 @@ main .dailyGoalSiblings:nth-child(2){
 
 
 #currntlyBorrowed{
-    margin-top: 224px;
+    margin-top: 300px;
     width: 100%;
     height: 20px;
     border-bottom: 1px solid black;
     text-align: center;  
     line-height: 30px;
+
 
 }
 
@@ -394,11 +395,13 @@ main .dailyGoalSiblings:nth-child(2){
 /* Css for Book Challenge information*/
 
 .bookChallengInfo{
+
     width: 1167px;
     height: 815px;  
     margin: 0 auto;
     background-image: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%); 
-    margin-top: 184px;
+    margin-top: 350px;
+    margin-bottom: 50px;
 
 }
 

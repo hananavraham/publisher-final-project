@@ -100,7 +100,7 @@ class Profile extends React.Component{
 
               	{
                     !isLoading && user.user ? user.user.borrowd_books.map((book)=>{
-                         return(<CurrentlyBorrowed key={book.book_id} book_id={book.book_id} profile={'profile'}></CurrentlyBorrowed>)
+                         return(<CurrentlyBorrowed key={book.book_id} book_id={book.book_id} profile={'profile'} user={this.state.user}></CurrentlyBorrowed>)
                     }) : <div></div>
                 }
                  <div id="beginNewBook">

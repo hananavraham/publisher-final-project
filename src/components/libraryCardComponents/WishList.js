@@ -18,9 +18,9 @@ class WishList extends React.Component{
         </div>
         <div id="wishList">
             <article>
-                <img src="images/jarHearts.png"></img>
+                <img src=""></img>
                 <section>
-                   <span>Less than <span>48</span> days</span>
+                   <span></span>
                 </section>
             </article>
         </div>
