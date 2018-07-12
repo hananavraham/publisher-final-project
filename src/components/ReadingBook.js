@@ -7,23 +7,23 @@ class ReadingBook extends React.Component{
     super(props);
     this.state = {
       book : {},
-      userId : null,
-      chpater : null
+      currentUserChapter: 0
     }
     this.updateChapter = this.updateChapter.bind(this);
+    this.getCurrentChapter = this.getCurrentChapter.bind(this);
+    this.printChaptersEllipse = this.printChaptersEllipse.bind(this);
+    this.checkCurrentChapter = this.checkCurrentChapter.bind(this);
+    this.moveToChapter = this.moveToChapter.bind(this);
   }
  
 
   componentDidMount() {
-     axios.get (`https://hanan-lior-publisher-app.herokuapp.com/book/GetBookById/${this.props.location.state.referrer}`, {
+     axios.get (`https://hanan-lior-publisher-app.herokuapp.com/book/GetBookById/${this.props.location.state.referrer.book_id}`, {
       })
       .then(response =>{
-        console.log(response.data);
-        console.log(response.data.chapters[0].content)
         this.setState({
-            book:response.data,
-            chapter:response.data.chapters[response.data.chapters.length -1].content
-            });
+            book:response.data
+        });
       })
       .catch(err =>{
         console.log(err);
@@ -31,44 +31,91 @@ class ReadingBook extends React.Component{
 }
 
 
-
-
   updateChapter(){
-    axios.post (`https://book-payments.herokuapp.com/user/updateFinishChapter`, {
-        _id: this.state.userId,
-        bookId : this.state.book._id,
-        chapter: this.state.chapter
-      })
-     .then(bookData=>{
-        this.setState({
-            isLoading: false,
-            book: bookData.data,
-        });
-  })
+    var current_chapter = this.checkCurrentChapter();
+    axios.post (`https://hanan-lior-publisher-app.herokuapp.com/user/updateFinishChapter`, {
+        chapter: current_chapter +1,
+        bookId: this.state.book.book_id,
+        _id: this.props.location.state.referrer.user.user._id
+    })
 }
 
+
+  getCurrentChapter(){
+      var current_chapter = this.checkCurrentChapter();
+      return this.state.book.chapters ? this.state.book.chapters[this.state.currentUserChapter].content : <div>nothing to show</div>
+  }
+
+  printChaptersEllipse(){
+    var items;
+    var current_chapter = this.checkCurrentChapter();
+    if(this.state.book.chapters){
+      items = this.state.book.chapters;
+      return (items.map((chapter,i)=>{
+          if(i < current_chapter){     
+              return(<article onClick={() => this.moveToChapter(i)} className="chapterEllipse finishedChapterEllipse"/>)
+          }
+
+          else if(i == 1){
+              return(<article onClick={()=> {this.moveToChapter(i)} } className="chapterEllipse currentChapterEllipse">
+                <b> {i} </b>
+              </article>)
+          }
+
+          else{
+              return(<article onClick={()=> {this.moveToChapter(i)} } className="chapterEllipse nextChapterEllipse">
+                <b> {i}</b>
+              </article>)
+          }
+      }))
+    }
+  }
+
+
+  moveToChapter(i){
+      this.setState({currentUserChapter:i});
+  }
+
+  checkCurrentChapter(){
+      var books = this.props.location.state.referrer.user.user.borrowd_books;
+      var current_chapter;
+      books.forEach(book=>{
+        if(book.book_id == this.props.location.state.referrer.book_id){
+          current_chapter = book.current_chapter;
+        }
+      });
+        return current_chapter;
+  }  
+
+
+
+
+
   render () {
+    const {book} = this.state;
+    const {user} = this.props.location.state.referrer;
     return (
         <div id="book">
-            <img className="bookImage" src={this.state.book.img}/>
+            <img className="bookImage" src={book.img}/>
             <article>
               <section>
                   <img src="/images/like.png"/>
-                  <span>25 </span>
+                  <span>{book.likes ? book.likes.length : 0} </span>
               </section>
               <section>
                   <img src="/images/comment.png"/>
-                  <span>27</span>
+                  <span>{book.reviews ? book.reviews.length : 0}</span>
                 </section>
               <section>
                   <img src="/images/share.png"/>
-                  <span>10</span>
+                  <span>{
+                    book.shares ? book.shares.length : 0}</span>
               </section>
             </article>
-            <h1>{this.state.book.book_name}</h1>
-            <h2>by:  </h2><h3>{this.state.book.authorName}</h3>
+            <h1>{book.book_name}</h1>
+            <h2>by:  </h2><h3>{book.authorName}</h3>
             <section className="bookCategory">
-                <h5>#{this.state.book.categories}</h5>
+                <h5>#{book.categories}</h5>
             </section>
             <section id="writerProgress">
               <h3> writer progress </h3>
@@ -77,18 +124,17 @@ class ReadingBook extends React.Component{
               </article>
             </section>
             <p id="chapterContent">
-               {this.state.book.chapters ? this.state.book.chapters[0].content : <div>sdfs</div>}
+               {
+                  this.getCurrentChapter()
+               }      
             </p>
-            <button id="finishChapter" onclick="updateChapter">Finish Chapter</button>
+            <button id="finishChapter" onClick={this.updateChapter}>Finish Chapter</button>
             <div>
               <h4> chapters </h4>
-              <article className="chapterEllipse finishedChapterEllipse"/>
-              <article className="chapterEllipse currentChapterEllipse">
-                <b> 3 </b>
-              </article>
-              <article className="chapterEllipse nextChapterEllipse">
-                <b> 4 </b>
-              </article>
+              {
+                this.printChaptersEllipse()
+              }
+       
             </div>
         </div>
     );

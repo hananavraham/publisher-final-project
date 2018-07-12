@@ -15,7 +15,7 @@ class RecentlyFinished extends React.Component{
             <article>
                 <img src="images/theMartian.png"></img>
                 <section>
-                    Reate This Book
+                    Rate This Book
                 </section>
                 <section>
                     <span></span>

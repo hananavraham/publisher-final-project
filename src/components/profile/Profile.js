@@ -54,7 +54,7 @@ class Profile extends React.Component{
                             <table>
                             <tbody>
                                 <tr>
-                                    <td>{user.user.borrowd_books.length}</td>
+                                    <td>{user.user.currently_writing.length}</td>
                                     <td>{user.user.followers.length}</td> 
                                     <td>{user.user.following.length}</td>
                                 </tr>
@@ -100,7 +100,7 @@ class Profile extends React.Component{
 
               	{
                     !isLoading && user.user ? user.user.borrowd_books.map((book)=>{
-                         return(<CurrentlyBorrowed key={book.book_id} book_id={book.book_id} profile={'profile'}></CurrentlyBorrowed>)
+                         return(<CurrentlyBorrowed key={book.book_id} book_id={book.book_id} profile={'profile'} user={this.state.user}></CurrentlyBorrowed>)
                     }) : <div></div>
                 }
                  <div id="beginNewBook">

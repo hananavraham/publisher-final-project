@@ -21,7 +21,7 @@ class Messages extends React.Component{
         console.log(response.data[0]);
         this.setState({
             messages:response.data[0].Inbox
-            });
+        });
       })
       .catch(err =>{
         console.log(err);
