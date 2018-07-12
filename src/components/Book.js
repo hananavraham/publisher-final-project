@@ -11,6 +11,9 @@ class Book extends React.Component{
       summary : null
     }
 
+    this.borrowBook = this.borrowBook.bind(this);
+    this.wishBook = this.wishBook.bind(this);
+
   }
 
 
@@ -29,7 +32,34 @@ class Book extends React.Component{
       .catch(err =>{
         console.log(err);
       });   
-}
+  }
+
+  borrowBook(){
+      axios.post(`https://hanan-lior-publisher-app.herokuapp.com/user/borrowNewBook`,{
+        _id: this.state.user.user._id,
+        book_id: this.props.book_id,
+        current_chapter : 0
+      })
+      .then(function (response) {
+          console.log(response);
+        })
+      .catch(function (error) {
+          console.log(error);
+        });
+  }
+
+  wishBook(){
+      axios.post(`https://hanan-lior-publisher-app.herokuapp.com/user/AddWishListUser`,{
+        _id: this.state.user.user._id,
+        bookId :this.props.book_id
+      })
+      .then(function (response) {
+          console.log(response);
+        })
+      .catch(function (error) {
+          console.log(error);
+        });
+  }
 
 
   render () {
@@ -39,15 +69,15 @@ class Book extends React.Component{
             <article>
               <section>
                   <img src="/images/like.png"/>
-                  <span>25 </span>
+                  <span>{this.state.book.likes} </span>
               </section>
               <section>
                   <img src="/images/comment.png"/>
-                  <span>27</span>
+                  <span>{this.state.book.reviews}</span>
                 </section>
               <section>
                   <img src="/images/share.png"/>
-                  <span>10</span>
+                  <span>{this.state.book.shares}</span>
               </section>
             </article>
             <h1>{this.state.book.book_name}</h1>
@@ -66,12 +96,12 @@ class Book extends React.Component{
               </article>
             </section>
             <section id="bookChoice">
-                <article>
+                <article onClick={this.borrowBook}>
                   <img src="/images/eye.png"/>
                   borrow
                 </article>
                 <span>
-                  <article>
+                  <article onClick={this.wishBook}>
                     <img src="/images/star.png"/>
                       wishlist
                   </article>

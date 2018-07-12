@@ -72,11 +72,11 @@ class LibraryCard extends React.Component{
                         {!isLoading && user.user ? user.user.borrowd_books.length : 0} 
                     </span>
                 </div>
-                {
+              {
                     !isLoading && user.user ? user.user.borrowd_books.map((book)=>{
-                         return(<CurrentlyBorrowed key={book.book_id} book_id={book.book_id}></CurrentlyBorrowed>)
-                    }) : <div>no goals</div>
-                }
+                         return(<CurrentlyBorrowed user={this.state.user} key={book.book_id} book_id={book.book_id}></CurrentlyBorrowed>)
+                    }) : <div></div>
+                }  
                 <div className="clear-both">
                 </div>
                 <div id="expendBorrow">
@@ -86,10 +86,14 @@ class LibraryCard extends React.Component{
                 <div className="clear-both">
                 </div>
                 {
-                    !isLoading && unlikedBook.length > 0 ? <GiveAnotherTryToBook userId={user.user._id} unlikedBook={unlikedBook[Math.floor(Math.random() * unlikedBook.length)]}></GiveAnotherTryToBook> : <div>no unlike book</div>
+                    !isLoading && unlikedBook.length > 0 ? <GiveAnotherTryToBook userId={user.user._id} unlikedBook={unlikedBook[Math.floor(Math.random() * unlikedBook.length)]}></GiveAnotherTryToBook> : <div></div>
                 }
                 <RecentlyFinished/>
-                <WishList/>
+                {
+                    !isLoading && user.user ? user.user.wishlist.map((book)=>{
+                         return(<WishList user={this.state.user} key={book.book_id} book_id={book.book_id}></WishList>)
+                    }) : <div></div>
+                }
                 <AlsoLike/>
             </main>
   
