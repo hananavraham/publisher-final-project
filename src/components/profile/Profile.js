@@ -109,6 +109,7 @@ class Profile extends React.Component{
                 </div>
             </div>
 
+
     		);
     }
     return (
@@ -183,8 +184,6 @@ class Profile extends React.Component{
                     <button id="beginNewBookBtn"></button>
                 </div>
              
-            
-
                 <div id="profileDailyGoalSiblings">
                     <p>Write 5 days in a row<span>3/10</span></p>
                     <p>win 200 xp</p>

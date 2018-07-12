@@ -13,7 +13,7 @@ class RecentlyFinished extends React.Component{
         <div id="recentlyFinish">
             <p>recently finished</p>
             <article>
-                <img src="images/theMartian.png"></img>
+                <img src={this.state.imgSrc}></img>
                 <section>
                     Rate This Book
                 </section>

@@ -16,6 +16,7 @@ class LibraryCard extends React.Component{
     this.state = {
         user: [],
         unlikedBook:[],
+        recently_finished:[],
         isLoading: false,
         error: null
         }      
@@ -29,7 +30,8 @@ class LibraryCard extends React.Component{
         this.setState({
             isLoading: false,
             user: userData.data,
-            unlikedBook:userData.data.user.unliked_books
+            unlikedBook:userData.data.user.unliked_books,
+            recently_finished:userData.data.user.recently_finished
             });
      })
     .catch(error => this.setState({
@@ -42,7 +44,7 @@ class LibraryCard extends React.Component{
 
   render () {
 
-    const { user, unlikedBook, isLoading, error } = this.state;
+    const { user, unlikedBook, recently_finished, isLoading, error } = this.state;
     
     if (error) {
         return <p>{error.message}</p>;
@@ -88,7 +90,11 @@ class LibraryCard extends React.Component{
                 {
                     !isLoading && unlikedBook.length > 0 ? <GiveAnotherTryToBook userId={user.user._id} unlikedBook={unlikedBook[Math.floor(Math.random() * unlikedBook.length)]}></GiveAnotherTryToBook> : <div></div>
                 }
-                <RecentlyFinished/>
+
+                {
+                    !isLoading && recently_finished.length > 0 ? <RecentlyFinished userId={user.user._id} recently_finished={recently_finished[Math.floor(Math.random() * recently_finished.length)]}></RecentlyFinished> : <div></div>
+                }
+                
                 {
                     !isLoading && user.user ? user.user.wishlist.map((book)=>{
                          return(<WishList user={this.state.user} key={book.book_id} book_id={book.book_id}></WishList>)
