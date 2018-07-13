@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import RateBook from './RateBook';
 
 class RecentlyFinished extends React.Component{
  
@@ -11,6 +12,7 @@ class RecentlyFinished extends React.Component{
         error: null,
         } 
   
+
   }
  
   componentDidMount(){
@@ -27,6 +29,7 @@ class RecentlyFinished extends React.Component{
         isLoading: false
      }));
   }
+
   
   render () {
     return (
@@ -38,13 +41,10 @@ class RecentlyFinished extends React.Component{
                     Rate This Book
                 </section>
                 <section>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <RateBook book={this.state.book}/>
                 </section>
             </article>
+
         </div>
     );
   }

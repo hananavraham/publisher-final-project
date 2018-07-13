@@ -586,7 +586,7 @@ main .dailyGoalSiblings:nth-child(2){
 
 #recentlyFinish article section:nth-child(2){
     width: 800px;
-    height: 400px;
+    height: 200px;
     color: #000000;
     font-family: Tinos;
     font-size: 94px;
@@ -611,14 +611,6 @@ main .dailyGoalSiblings:nth-child(2){
     display: flex;
     justify-content:center;
 
-}
-
-#recentlyFinish article section:nth-child(3) span{
-    width: 90px;
-    height: 88px;
-    flex-direction: row ;
-    background-image: url("/images/rateStar.png");
-    margin-left: 20px;
 }
 
 /* Css for wish list*/
@@ -1047,7 +1039,6 @@ main .dailyGoalSiblings:nth-child(2){
     margin-top: 5px;
     margin-right: 80px;
 }
-
 
 /* Profile page*/
 /* Css for main profile*/
