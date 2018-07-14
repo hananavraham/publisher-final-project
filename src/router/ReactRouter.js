@@ -8,7 +8,7 @@ import Messages                                 from '../components/Messages';
 import Book                                     from '../components/Book';
 import Login                                    from '../components/Login';
 import ReadingBook                              from '../components/ReadingBook';
-
+import Logout                                   from '../components/Logout';
 
 
 class ReactRouter extends React.Component{
@@ -68,17 +68,18 @@ class ReactRouter extends React.Component{
                             <li><NavLink onClick={(e)=>{this.hideSideNav(e)}} to='/profile'>profile</NavLink></li>
                             <li><NavLink onClick={(e)=>{this.hideSideNav(e)}} to='/Messages'>messages</NavLink></li>
                             <li><NavLink to='/'>browse</NavLink></li>
-                            <li><NavLink to='/'>Log Out</NavLink></li>
+                            <li><NavLink onClick={(e)=>{this.hideSideNav(e)}} to='/Logout'>Log Out</NavLink></li>
                         </ul>
                       
                      </nav>
                        <React.Fragment>
-                            <Route path='/' exact component={Login}>></Route>
+                            <Route path='/Login' exact component={Login}></Route>
                             <Route path='/librarycard' exact  component={LibraryCard}></Route>
                             <Route path='/profile' exact   render={(props) => <Profile test={'test'} isAuthed={true} />}></Route>
                             <Route path='/Messages' exact  component={Messages}></Route>
                             <Route path='/ReadingBook' exact  component={ReadingBook}></Route>
                             <Route path='/Book' exact  component={Book}></Route>
+                            <Route path='/Logout' exact  component={Logout}></Route>
                         </React.Fragment>
                      </div>
             </Router>

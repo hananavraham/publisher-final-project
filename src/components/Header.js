@@ -20,7 +20,7 @@ class Header extends React.Component{
                   <span ></span>
                   <span ></span>
               </div>
-                 <div>{ this.props.title}</div>
+                 <div id="headerTitle">{this.props.title}</div>
               <div id="currentSelectionIcone">
               </div>
           </nav>

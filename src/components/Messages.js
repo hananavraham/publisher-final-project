@@ -15,7 +15,10 @@ class Messages extends React.Component{
   }
  
   componentDidMount() {
-     axios.get (`https://hanan-lior-publisher-app.herokuapp.com/user/getUserMessages/5b29fb01817b593f14eac973`, {
+    document.getElementById('headerTitle').innerHTML = 'Messages';
+    const userId = localStorage.getItem('realId');
+    console.log('messages ' + userId)
+     axios.get (`https://hanan-lior-publisher-app.herokuapp.com/user/getUserMessages/${userId}`, {
       })
       .then(response =>{
         console.log(response.data[0]);
@@ -50,6 +53,10 @@ class Messages extends React.Component{
 
 
   render () {
+
+     if(this.state.messages.length == 0){
+       return <h1>need to login</h1>;
+    }
     return (
         <div>
 	        <section className="messageHeader">

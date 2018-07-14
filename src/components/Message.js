@@ -13,8 +13,12 @@ class Message extends React.Component{
   }
  
 
-componentDidMount() {
-     axios.get('https://hanan-lior-publisher-app.herokuapp.com/user/userByID/5b44b395e7179a31f532223a')
+componentDidMount() 
+{
+    const userId = localStorage.getItem('realId');
+    console.log(userId);
+    this.setState({isLoading:true})
+    axios.get(`https://hanan-lior-publisher-app.herokuapp.com/user/userByID/${userId}`)
     .then(userData=>{
       this.setState({
           user: userData.data.user
@@ -25,6 +29,7 @@ componentDidMount() {
 
 
   render () {
+   
     return (
         <section id="Messagebox">
             <img src={this.state.user.image}></img>

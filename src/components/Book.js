@@ -48,6 +48,7 @@ class Book extends React.Component{
 
 
   componentDidMount() {
+     document.getElementById('headerTitle').innerHTML = 'Book';
       var wish = false;
       var borrowd = false;
       wish = this.checkIfwish();
@@ -173,7 +174,7 @@ class Book extends React.Component{
             <div>
                 {
                     this.state.book.categories ? this.state.book.categories.map(category=>{
-                      return(<section className="bookCategory">
+                      return(<section key={category} className="bookCategory">
                           <h5>#{category}</h5>
                         </section>) 
                     })  : <div></div>

@@ -118,7 +118,7 @@ class ReadingBook extends React.Component{
             <div>
                 {
                     this.state.book.categories ? this.state.book.categories.map(category=>{
-                      return(<section className="ReadingbookCategory">
+                      return(<section key={category} className="ReadingbookCategory">
                           <h5>#{category}</h5>
                         </section>) 
                     })  : <div></div>

@@ -23,10 +23,13 @@ class LibraryCard extends React.Component{
     }
  
   componentDidMount(){
+    document.getElementById('headerTitle').innerHTML = 'Library Card';
+    const userId = localStorage.getItem('googleId');
     this.setState({isLoading:true})
-    axios.get('https://hanan-lior-publisher-app.herokuapp.com/user/userByID/5b44b395e7179a31f532223a')
+    axios.get(`https://hanan-lior-publisher-app.herokuapp.com/user/userByGoogleID/${userId}`)
     .then(userData=>{
         console.log(userData);
+        localStorage.setItem('realId', userData.data.user._id);
         this.setState({
             isLoading: false,
             user: userData.data,
@@ -47,7 +50,7 @@ class LibraryCard extends React.Component{
     const { user, unlikedBook, recently_finished, isLoading, error } = this.state;
     
     if (error) {
-        return <p>{error.message}</p>;
+        return <h1>{error}</h1>;
     }
 
     if (isLoading) {

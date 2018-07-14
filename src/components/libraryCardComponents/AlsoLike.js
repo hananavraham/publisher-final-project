@@ -31,7 +31,7 @@ class AlsoLike extends React.Component{
         })
       }
 
-      return (<div>Loading...</div>);
+      return (<div></div>);
   }
 }
  
