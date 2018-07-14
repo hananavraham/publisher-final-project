@@ -161,7 +161,7 @@ a:hover, a:focus, a:active {
     //display: none;
     position: absolute;
     top: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 
@@ -245,7 +245,7 @@ a:hover, a:focus, a:active {
 #mainWrapper{
     display: block;
     width: 1440px;
-    height: 8545px;
+    /* height: 8545px; */
     background-color: #ffffff; 
 }
 
@@ -844,6 +844,14 @@ main .dailyGoalSiblings:nth-child(2){
     height: 1020px;
     border: 1px solid;
     margin-top: 100px;
+}
+
+#alsoLikeImgContainer img{
+
+    float: left;
+    margin: 50px;
+    width: 500px;
+    height: 600px;
 }
 
 /*  Css for Book Component */

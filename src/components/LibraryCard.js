@@ -108,7 +108,16 @@ class LibraryCard extends React.Component{
                          return(<WishList user={this.state.user} key={book.book_id + 'i'} book_id={book.book_id}></WishList>)
                     }) : <div></div>
                 }
-                <AlsoLike/>
+                <div id="alsoLikeTitle">
+                     <span>you may also like</span>
+                </div>
+                <div id="alsoLikeImgContainer">
+                {
+                    !isLoading && user.user ?   <AlsoLike user={this.state.user} offerdBooks={user.offerdBooks}/> :  <AlsoLike/>
+                }
+                </div>
+
+               
             </main>
   
       </div>       
