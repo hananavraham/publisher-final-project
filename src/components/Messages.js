@@ -104,7 +104,7 @@ class Messages extends React.Component{
           <label>To: </label><span>
             <input name="toUser" value={this.state.toUser} onChange={this.handleToUserChange} placeholder="Enter Name"/></span><br/>
             <textArea name="message" value={this.state.message} onChange={this.handleMessageChange}>
-            </textArea>
+            </textArea><br/>
             <button type="submit">Send Message </button>
           </form>
           {   /* mapping all the messages */
