@@ -28,7 +28,6 @@ class Messages extends React.Component{
      axios.get (`https://hanan-lior-publisher-app.herokuapp.com/user/getUserMessages/${userId}`, {
       })
       .then(response =>{
-        console.log(response.data[0]);
         this.setState({
             messages:response.data[0]
         });
@@ -90,7 +89,6 @@ class Messages extends React.Component{
 
 
   render () {
-
      if(this.state.messages.length == 0){
        return <h1>need to login</h1>;
     }
@@ -110,6 +108,7 @@ class Messages extends React.Component{
           {   /* mapping all the messages */
             this.state.isInbox ? this.state.messages.Inbox.map((message)=>{
               return(<Message SenderId={message.SenderId} date={message.date} message={message.message} key={message.message + 'i'}/>)
+            
             }) : this.state.messages.Sent.map((message)=>{
               return(<Message SenderId={message.reciverID} date={message.date} message={message.message} key={message.message + 'i'}/>)
             })
