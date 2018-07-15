@@ -153,15 +153,15 @@ class Book extends React.Component{
             <img className="bookImage" src={this.state.book.img}/>
             <article>
               <section>
-                  <img src="/images/like.png"/>
+                  <img src="/2017-2018/dcs/dev_172/images/like.png"/>
                   <span>1 </span>
               </section>
               <section>
-                  <img src="/images/comment.png"/>
+                  <img src="/2017-2018/dcs/dev_172/images/comment.png"/>
                   <span>1</span>
                 </section>
               <section>
-                  <img src="/images/share.png"/>
+                  <img src="/2017-2018/dcs/dev_172/images/share.png"/>
                   <span>1</span>
               </section>
             </article>
@@ -189,14 +189,14 @@ class Book extends React.Component{
             <section id="bookChoice">
                 <article onClick={this.borrowBook}>
                   {
-                    this.state.isBorrow ? <img src="/images/blue_eye.png"/> : <img src="/images/eye.png"/>
+                    this.state.isBorrow ? <img src="/2017-2018/dcs/dev_172/images/blue_eye.png"/> : <img src="/2017-2018/dcs/dev_172/images/eye.png"/>
                   }
                   borrow
                 </article>
                 <span>
                   <article onClick={this.wishBook}>
                     {
-                      this.state.isWish ? <img src="/images/blue_star.png"/> : <img src="/images/star.png"/>
+                      this.state.isWish ? <img src="/2017-2018/dcs/dev_172/images/blue_star.png"/> : <img src="/2017-2018/dcs/dev_172/images/star.png"/>
                     }
                       wishlist
                   </article>

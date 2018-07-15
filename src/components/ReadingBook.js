@@ -108,15 +108,15 @@ class ReadingBook extends React.Component{
             <img className="bookImage" src={book.img}/>
             <article>
               <section>
-                  <img src="/images/like.png"/>
+                  <img src="/2017-2018/dcs/dev_172/images/like.png"/>
                   <span>{book.likes ? book.likes.length : 0} </span>
               </section>
               <section>
-                  <img src="/images/comment.png"/>
+                  <img src="/2017-2018/dcs/dev_172/images/comment.png"/>
                   <span>{book.reviews ? book.reviews.length : 0}</span>
                 </section>
               <section>
-                  <img src="/images/share.png"/>
+                  <img src="/2017-2018/dcs/dev_172/images/share.png"/>
                   <span>{
                     book.shares ? book.shares.length : 0}</span>
               </section>

@@ -34,7 +34,7 @@ class ContinueWriting extends React.Component{
             book: bookData.data,
             book_name: bookData.data.book_name,
             book_id: bookData.data.book_id,
-            imgSrc: bookData.data.imgContinueWriting
+            imgSrc: `../${bookData.data.imgContinueWriting}`
             
         });
         axios.get(`https://hanan-lior-publisher-app.herokuapp.com/book/readingTime/${bookData.data.book_name}`)

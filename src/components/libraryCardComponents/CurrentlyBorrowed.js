@@ -83,7 +83,7 @@ class CurrentlyBorrowed extends React.Component{
                     </span>
                 </section>    
                 <section>
-                    <img src="images/clock.png"></img>
+                    <img src="/2017-2018/dcs/dev_172/images/clock.png"></img>
                     <span>{this.state.readingTime ? this.state.readingTime: null} min</span>
                 </section>
             </article>

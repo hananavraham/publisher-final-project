@@ -203,7 +203,7 @@ a:hover, a:focus, a:active {
     text-transform: uppercase;
     margin: 0 auto;
     margin-top: 135px;
-    background-image: url('/images/logo.png');
+    background-image: url('/2017-2018/dcs/dev_172/images/logo.png');
     background-position: center;
     padding: 35px;
 }
@@ -279,7 +279,7 @@ a:hover, a:focus, a:active {
     float: right;
     margin-top: 46px;
     margin-right: 61px;
-    background-image: url(/images/libraryCarIcon.png);
+    background-image: url('/2017-2018/dcs/dev_172/images/libraryCarIcon.png');
     background-repeat: no-repeat;
 }
 
@@ -483,7 +483,7 @@ main .dailyGoalSiblings:nth-child(2){
     float: right;
     width: 193px;
     height: 198px; 
-    background-image: url("/images/expBtn.png");
+    background-image: url("/2017-2018/dcs/dev_172/images/expBtn.png");
     margin-right: 100px;
     margin-top: 70px;
 }
@@ -775,7 +775,7 @@ main .dailyGoalSiblings:nth-child(2){
     float: right;
     width: 250px;
     height: 250px; 
-    background-image: url("/images/addMessage.png");
+    background-image: url("/2017-2018/dcs/dev_172/images/addMessage.png");
     margin-right: 50px;
     margin-top: 30px;
 }
@@ -1301,7 +1301,7 @@ main .dailyGoalSiblings:nth-child(2){
     float: right;
     width: 193px;
     height: 198px; 
-    background-image: url("/images/expBtn.png");
+    background-image: url("/2017-2018/dcs/dev_172/images/expBtn.png");
     margin-right: 100px;
     margin-top: 70px;
 }
@@ -1473,7 +1473,7 @@ p#chapterContent{
 /* style for finished chapters ellipse */
 .finishedChapterEllipse{
     background-color: #bf988f;
-    background-image: url('/images/finishChapter.png');
+    background-image: url('/2017-2018/dcs/dev_172/images/finishChapter.png');
     background-repeat: no-repeat;
     background-position: center;
 }
