@@ -7,7 +7,8 @@ class ReadingBook extends React.Component{
     super(props);
     this.state = {
       book : {},
-      currentUserChapter: 0
+      currentUserChapter: 0,
+      reLoad: false
     }
     this.updateChapter = this.updateChapter.bind(this);
     this.getCurrentChapter = this.getCurrentChapter.bind(this);
@@ -32,13 +33,21 @@ class ReadingBook extends React.Component{
 
 
   updateChapter(){
-    var current_chapter = this.checkCurrentChapter();
+    var current_chapter = this.checkCurrentChapter();  
+    var chapter = current_chapter +1;
     axios.post (`https://hanan-lior-publisher-app.herokuapp.com/user/updateFinishChapter`, {
-        chapter: current_chapter +1,
-        bookId: this.state.book.book_id,
+        chapter: chapter,
+        bookId: this.props.location.state.referrer.book_id,
         _id: this.props.location.state.referrer.user.user._id
     })
-}
+    .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    this.setState({reLoad:true});
+  }
 
 
   getCurrentChapter(){
@@ -56,7 +65,7 @@ class ReadingBook extends React.Component{
               return(<article onClick={() => this.moveToChapter(i)} className="chapterEllipse finishedChapterEllipse"/>)
           }
 
-          else if(i == 1){
+          else if(i == current_chapter){
               return(<article onClick={()=> {this.moveToChapter(i)} } className="chapterEllipse currentChapterEllipse">
                 <b> {i} </b>
               </article>)

@@ -16,11 +16,12 @@ class Profile extends React.Component{
 
   }
  
-    componentDidMount(){
+     componentDidMount(){
     document.getElementById('headerTitle').innerHTML = 'Profile';
-    const userId = localStorage.getItem('myId');
+    const userId = localStorage.getItem('realId');
+    console.log('profile ' , userId);
     this.setState({isLoading:true})
-    axios.get(`https://hanan-lior-publisher-app.herokuapp.com/user/userByGoogleID/${userId}`)
+    axios.get(`https://hanan-lior-publisher-app.herokuapp.com/user/userByID/${userId}`)
     .then(userData=>{
         console.log(userData);
         this.setState({
